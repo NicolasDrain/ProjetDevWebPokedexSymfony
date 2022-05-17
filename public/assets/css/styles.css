@@ -1,2 +1,4 @@
 /* import du css personnalisé du header */
 @import url(header.css);
+/* import du css personnalisé du footer */
+@import url(footer.css);
