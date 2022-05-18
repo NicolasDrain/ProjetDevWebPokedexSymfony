@@ -5,3 +5,4 @@ logo svg bootstrap : https://icons.getbootstrap.com/
 check la version de php utilisée par symfony : symfony local:php:list
 commande pour créer le fichier de version : echo 8.1.5 > ~/.php-version
 étape 1 : composer install
+étape 2 : symfony server:start
