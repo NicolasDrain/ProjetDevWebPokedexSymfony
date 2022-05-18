@@ -32,8 +32,9 @@ class AppFixtures extends Fixture
             'fée'
         ];
         foreach($array_type as $type){
-            $type = new Type();
-            $manager->persist($type);
+            $new_type = new Type();
+            $new_type->setNom($type);
+            $manager->persist($new_type);
         }
         $manager->flush();
     }
