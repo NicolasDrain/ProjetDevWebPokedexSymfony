@@ -34,6 +34,7 @@ class AppFixtures extends Fixture
         foreach($array_type as $type){
             $new_type = new Type();
             $new_type->setNom($type);
+            $this->addReference($new_type->getNom(),$new_type);
             $manager->persist($new_type);
         }
         $manager->flush();

@@ -170,24 +170,16 @@ class PokemonFixtures extends Fixture
             $new_pokemon->setIsEvolution($pokemon['is_evolution']);
             $new_pokemon->setIsStarter($pokemon['is_starter']);
             $new_pokemon->setTypeCourbeNiveau($pokemon['type_courbe']);
-            #$type1= new Type();
-            #$type1->setNom($pokemon['id_type_1']);
-            #$new_pokemon->setIdType1($type1);
-            $type1 = $this->getReference("Type",$pokemon['nom']);
+            $type1 = $this->getReference($pokemon['id_type_1']);
             $new_pokemon->setIdType1($type1);
             if($pokemon['id_type_2']!=NULL){
-                #$type2= new Type();
-                #$type2->setNom($pokemon['id_type_2']);
-                #$new_pokemon->setIdType2($type2);
-                #$manager->persist($type2);
-                $type2 = $this->getReference("Type",$pokemon['nom']);
+                $type2 = $this->getReference($pokemon['id_type_2']);
                 $new_pokemon->setIdType2($type2);
             }
             $new_pokemon->setPhoto($pokemon['photo']);
             $new_pokemon->setCanEvolve($pokemon['can_evolve']);
             $manager->persist($new_pokemon);
         }
-        $type = $this->getReference("Type",1);
         $manager->flush();
     }
 }
