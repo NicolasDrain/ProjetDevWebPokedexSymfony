@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\Pokemon;
 use App\Form\PokemonType;
 use App\Repository\PokemonRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/pokemon')]
+#[IsGranted('ROLE_ADMIN')]
 class PokemonController extends AbstractController
 {
     #[Route('/', name: 'app_pokemon_index', methods: ['GET'])]
