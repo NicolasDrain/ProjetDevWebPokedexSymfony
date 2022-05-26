@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des pokémons{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% for pokemon in pokemons %}
+            <div class="row">
+                <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
+                    <div class="col-6">
+                        <img src="{{ asset( pokemon.photo ) }}"></img>
+                    </div>
+                    <div class="col-6">
+                        {{ pokemon.nom }}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
