@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChoixStarterController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center mb-5"
+            <p>
+                Veuillez choisir votre starter :
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        {% for pokemon in starter_pokemon %}
+        <a href="{{ path('app_add_starter', {id:pokemon.id}) }}">
+            <div class="col-1">
+                {{ pokemon.nom }}
+            </div>
+            <div class="col-3">
+                <img width="50%" heigth="50%" src="{{ asset( pokemon.photo ) }}">
+                </img>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+<pre>
+    {{ dump(starter_pokemon) }}
+</pre>
+{% endblock %}

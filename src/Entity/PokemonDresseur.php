@@ -41,6 +41,14 @@ class PokemonDresseur
     public function __construct()
     {
         $this->ventes = new ArrayCollection();
+        $genre=rand(0,1);
+        $this->date_time_derniere_activite = new \DateTime();
+        if($genre==0){
+            $this->genre = "M";
+        }
+        else{
+            $this->genre = "F";
+        }
     }
 
     public function getId(): ?int
