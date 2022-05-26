@@ -18,7 +18,7 @@ class PokemonController extends AbstractController
     #[Route('/', name: 'app_pokemon_index', methods: ['GET'])]
     public function index(PokemonRepository $pokemonRepository): Response
     {
-        return $this->render('pokemon/index.html.twig', [
+        return $this->render('admin/pokemon/index.html.twig', [
             'pokemon' => $pokemonRepository->findAll(),
         ]);
     }
@@ -36,7 +36,7 @@ class PokemonController extends AbstractController
             return $this->redirectToRoute('app_pokemon_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('pokemon/new.html.twig', [
+        return $this->renderForm('admin/pokemon/new.html.twig', [
             'pokemon' => $pokemon,
             'form' => $form,
         ]);
@@ -45,7 +45,7 @@ class PokemonController extends AbstractController
     #[Route('/{id}', name: 'app_pokemon_show', methods: ['GET'])]
     public function show(Pokemon $pokemon): Response
     {
-        return $this->render('pokemon/show.html.twig', [
+        return $this->render('admin/pokemon/show.html.twig', [
             'pokemon' => $pokemon,
         ]);
     }
@@ -62,7 +62,7 @@ class PokemonController extends AbstractController
             return $this->redirectToRoute('app_pokemon_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('pokemon/edit.html.twig', [
+        return $this->renderForm('admin/pokemon/edit.html.twig', [
             'pokemon' => $pokemon,
             'form' => $form,
         ]);
