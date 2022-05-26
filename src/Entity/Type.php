@@ -95,6 +95,10 @@ class Type
         return $this;
     }
 
+    public function __toString() {
+        return $this->nom;
+    }
+
     public function removePokemon(Pokemon $pokemon): self
     {
         if ($this->pokemon->removeElement($pokemon)) {
