@@ -16,6 +16,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ChoixStarterController extends AbstractController
 {
+    #[Route('/checkStarter', name: 'app_check_starter')]
+    public function checkStarter(): Response
+    {
+        if($this->getUser()->isStarterTaken()){
+            return $this->redirectToRoute('app_home',[], Response::HTTP_SEE_OTHER);
+        }
+        return $this->redirectToRoute('app_choix_starter',[], Response::HTTP_SEE_OTHER);
+    }
+
     #[Route('/choixStarter', name: 'app_choix_starter')]
     #[Security("is_granted('ROLE_USER') and user.isStarterTaken() == false")]
     public function index(PokemonRepository $pokemonRepository): Response
