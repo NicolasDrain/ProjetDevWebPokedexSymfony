@@ -42,7 +42,7 @@ class PokemonDresseur
     {
         $this->ventes = new ArrayCollection();
         $genre=rand(0,1);
-        $this->date_time_derniere_activite = new \DateTime();
+        $this->date_time_derniere_activite = new \DateTime("-1 hour");
         if($genre==0){
             $this->genre = "M";
         }
