@@ -128,6 +128,43 @@ class PokemonDresseur
         return $this;
     }
 
+    public function getNiveau(): ?int
+    {
+        $typeCourbeNiveau = $this->getIdPokemon()->getTypeCourbeNiveau();
+        if($this->exp==0){
+            return 1;
+        }
+        if($typeCourbeNiveau=='R'){
+            $niveau=pow($this->exp/0.8,1/3);
+
+        }
+        if($typeCourbeNiveau=='M'){
+            $niveau=pow($this->exp,1/3);
+        }
+        if($typeCourbeNiveau=='P'){
+            $niveau=pow($this->exp,1/3);
+        }
+        if($typeCourbeNiveau=='L'){
+            if($this->exp==1){
+                $niveau=1;
+            }
+            else{
+                $niveau=pow($this->exp/1,25,1/3);
+            }
+        }
+        if($niveau>100){
+            return 100;
+        }
+        return intval($niveau);
+    }
+
+    public function isAvailable(): ?bool
+    {
+        $date = new \DateTime();
+        $date2 = date_add($this->getDateTimeDerniereActivite(),date_interval_create_from_date_string('1 hour'));
+        return ($date>$date2);
+    }
+
     /**
      * @return Collection<int, Vente>
      */
