@@ -41,8 +41,8 @@ class PokemonDresseur
     public function __construct()
     {
         $this->ventes = new ArrayCollection();
-        $genre=rand(0,1);
         $this->date_time_derniere_activite = new \DateTime("-1 hour");
+        $genre=rand(0,1);
         if($genre==0){
             $this->genre = "M";
         }
@@ -156,6 +156,24 @@ class PokemonDresseur
             return 100;
         }
         return intval($niveau);
+    }
+
+    public function getExpByNiveau(int $niveau): ?int
+    {
+        $typeCourbeNiveau = $this->getIdPokemon()->getTypeCourbeNiveau();
+        if($typeCourbeNiveau=='R'){
+            $exp=0.8*pow($niveau,3);
+        }
+        if($typeCourbeNiveau=='M'){
+            $exp=pow($niveau,3);
+        }
+        if($typeCourbeNiveau=='P'){
+            $exp=pow($niveau,3);
+        }
+        if($typeCourbeNiveau=='L'){
+            $exp=1.25*pow($niveau,3);
+        }
+        return intval($exp);
     }
 
     public function isAvailable(): ?bool

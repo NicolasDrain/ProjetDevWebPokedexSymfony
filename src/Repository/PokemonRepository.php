@@ -39,6 +39,22 @@ class PokemonRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return Pokemon[] Returns an array of Pokemon objects
+     */
+    public function findByListOfId($types): array
+    {
+        $query= $this->createQueryBuilder('p');
+        foreach($types as $type){
+            $query->orWhere('p.id_type_1 = '.$type);
+            $query->orWhere('p.id_type_2 = '.$type);
+        }
+        return $query
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Pokemon[] Returns an array of Pokemon objects
 //     */

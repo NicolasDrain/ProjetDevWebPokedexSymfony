@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EntrainementController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                Votre pokémon {{ pokemonDresseur.idPokemon.nom }} a été chassé dans la region {{ nomRegion}} et a capturé un {{ newPokemonDresseur.idPokemon.nom }} de niveau {{ niveau }}. Félicitation !
+            </div>
+        </div>
+    </div>
+{% endblock %}
