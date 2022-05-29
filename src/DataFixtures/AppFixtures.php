@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Type;
+use App\Entity\Region;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -34,6 +35,20 @@ class AppFixtures extends Fixture
             $new_type->setNom($type);
             $this->addReference($new_type->getNom(),$new_type);
             $manager->persist($new_type);
+        }
+
+        $array_region = [
+            'montagne',
+            'prairie',
+            'ville',
+            'foret',
+            'plage'
+        ];
+        foreach($array_region as $region){
+            $new_region = new Region();
+            $new_region->setNom($region);
+            $this->addReference($new_region->getNom(),$new_region);
+            $manager->persist($new_region);
         }
         $manager->flush();
     }
