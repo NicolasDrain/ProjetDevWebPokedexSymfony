@@ -31,7 +31,7 @@ class Pokemon
     #[ORM\JoinColumn(nullable: false)]
     private $id_type_1;
 
-    #[ORM\ManyToOne(targetEntity: Type::class, inversedBy: 'pokemon')]
+    #[ORM\ManyToOne(targetEntity: Type::class)]
     private $id_type_2;
 
     #[ORM\Column(type: 'string', length: 255)]

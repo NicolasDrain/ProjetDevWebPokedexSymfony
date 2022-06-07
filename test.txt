@@ -1,0 +1,300 @@
+if( 0<=$exp and $exp<9) {
+    $niveau=1;
+}
+if( 9<=$exp and $exp<57) {
+    $niveau=2;
+}
+if( 57<=$exp and $exp<96) {
+    $niveau=3;
+}
+if( 96<=$exp and $exp<135) {
+    $niveau=4;
+}
+if( 135<=$exp and $exp<179) {
+    $niveau=5;
+}
+if( 179<=$exp and $exp<236) {
+    $niveau=6;
+}
+if( 236<=$exp and $exp<314) {
+    $niveau=7;
+}
+if( 314<=$exp and $exp<419) {
+    $niveau=8;
+}
+if( 419<=$exp and $exp<560) {
+    $niveau=9;
+}
+if( 560<=$exp and $exp<742) {
+    $niveau=10;
+}
+if( 742<=$exp and $exp<973) {
+    $niveau=11;
+}
+if( 973<=$exp and $exp<1261) {
+    $niveau=12;
+}
+if( 1261<=$exp and $exp<1612) {
+    $niveau=13;
+}
+if( 1612<=$exp and $exp<2035) {
+    $niveau=14;
+}
+if( 2035<=$exp and $exp<2535) {
+    $niveau=15;
+}
+if( 2535<=$exp and $exp<3120) {
+    $niveau=16;
+}
+if( 3120<=$exp and $exp<3798) {
+    $niveau=17;
+}
+if( 3798<=$exp and $exp<4575) {
+    $niveau=18;
+}
+if( 4575<=$exp and $exp<5460) {
+    $niveau=19;
+}
+if( 5460<=$exp and $exp<6458) {
+    $niveau=20;
+}
+if( 6458<=$exp and $exp<7577) {
+    $niveau=21;
+}
+if( 7577<=$exp and $exp<8825) {
+    $niveau=22;
+}
+if( 8825<=$exp and $exp<10208) {
+    $niveau=23;
+}
+if( 10208<=$exp and $exp<11735) {
+    $niveau=24;
+}
+if( 11735<=$exp and $exp<13411) {
+    $niveau=25;
+}
+if( 13411<=$exp and $exp<15244) {
+    $niveau=26;
+}
+if( 15244<=$exp and $exp<17242) {
+    $niveau=27;
+}
+if( 17242<=$exp and $exp<19411) {
+    $niveau=28;
+}
+if( 19411<=$exp and $exp<21760) {
+    $niveau=29;
+}
+if( 21760<=$exp and $exp<24294) {
+    $niveau=30;
+}
+if( 24294<=$exp and $exp<27021) {
+    $niveau=31;
+}
+if( 27021<=$exp and $exp<29949) {
+    $niveau=32;
+}
+if( 29949<=$exp and $exp<33084) {
+    $niveau=33;
+}
+if( 33084<=$exp and $exp<36435) {
+    $niveau=34;
+}
+if( 36435<=$exp and $exp<40007) {
+    $niveau=35;
+}
+if( 40007<=$exp and $exp<43808) {
+    $niveau=36;
+}
+if( 43808<=$exp and $exp<47846) {
+    $niveau=37;
+}
+if( 47846<=$exp and $exp<52127) {
+    $niveau=38;
+}
+if( 52127<=$exp and $exp<56660) {
+    $niveau=39;
+}
+if( 56660<=$exp and $exp<61450) {
+    $niveau=40;
+}
+if( 61450<=$exp and $exp<66505) {
+    $niveau=41;
+}
+if( 66505<=$exp and $exp<71833) {
+    $niveau=42;
+}
+if( 71833<=$exp and $exp<77440) {
+    $niveau=43;
+}
+if( 77440<=$exp and $exp<83335) {
+    $niveau=44;
+}
+if( 83335<=$exp and $exp<89523) {
+    $niveau=45;
+}
+if( 89523<=$exp and $exp<96012) {
+    $niveau=46;
+}
+if( 96012<=$exp and $exp<102810) {
+    $niveau=47;
+}
+if( 102810<=$exp and $exp<109923) {
+    $niveau=48;
+}
+if( 109923<=$exp and $exp<117360) {
+    $niveau=49;
+}
+if( 117360<=$exp and $exp<125126) {
+    $niveau=50;
+}
+if( 125126<=$exp and $exp<133229) {
+    $niveau=51;
+}
+if( 133229<=$exp and $exp<141677) {
+    $niveau=52;
+}
+if( 141677<=$exp and $exp<150476) {
+    $niveau=53;
+}
+if( 150476<=$exp and $exp<159635) {
+    $niveau=54;
+}
+if( 159635<=$exp and $exp<169159) {
+    $niveau=55;
+}
+if( 169159<=$exp and $exp<179056) {
+    $niveau=56;
+}
+if( 179056<=$exp and $exp<189334) {
+    $niveau=57;
+}
+if( 189334<=$exp and $exp<199999) {
+    $niveau=58;
+}
+if( 199999<=$exp and $exp<211060) {
+    $niveau=59;
+}
+if( 211060<=$exp and $exp<222522) {
+    $niveau=60;
+}
+if( 222522<=$exp and $exp<234393) {
+    $niveau=61;
+}
+if( 234393<=$exp and $exp<246681) {
+    $niveau=62;
+}
+if( 246681<=$exp and $exp<259392) {
+    $niveau=63;
+}
+if( 259392<=$exp and $exp<272535) {
+    $niveau=64;
+}
+if( 272535<=$exp and $exp<286115) {
+    $niveau=65;
+}
+if( 286115<=$exp and $exp<300140) {
+    $niveau=66;
+}
+if( 300140<=$exp and $exp<314618) {
+    $niveau=67;
+}
+if( 314618<=$exp and $exp<329555) {
+    $niveau=68;
+}
+if( 329555<=$exp and $exp<344960) {
+    $niveau=69;
+}
+if( 344960<=$exp and $exp<360838) {
+    $niveau=70;
+}
+if( 360838<=$exp and $exp<377197) {
+    $niveau=71;
+}
+if( 377197<=$exp and $exp<394045) {
+    $niveau=72;
+}
+if( 394045<=$exp and $exp<411388) {
+    $niveau=73;
+}
+if( 411388<=$exp and $exp<429235) {
+    $niveau=74;
+}
+if( 429235<=$exp and $exp<447591) {
+    $niveau=75;
+}
+if( 447591<=$exp and $exp<466464) {
+    $niveau=76;
+}
+if( 466464<=$exp and $exp<485862) {
+    $niveau=77;
+}
+if( 485862<=$exp and $exp<505791) {
+    $niveau=78;
+}
+if( 505791<=$exp and $exp<526260) {
+    $niveau=79;
+}
+if( 526260<=$exp and $exp<547274) {
+    $niveau=80;
+}
+if( 547274<=$exp and $exp<568841) {
+    $niveau=81;
+}
+if( 568841<=$exp and $exp<590969) {
+    $niveau=82;
+}
+if( 590969<=$exp and $exp<613664) {
+    $niveau=83;
+}
+if( 613664<=$exp and $exp<636935) {
+    $niveau=84;
+}
+if( 636935<=$exp and $exp<660787) {
+    $niveau=85;
+}
+if( 660787<=$exp and $exp<685228) {
+    $niveau=86;
+}
+if( 685228<=$exp and $exp<710266) {
+    $niveau=87;
+}
+if( 710266<=$exp and $exp<735907) {
+    $niveau=88;
+}
+if( 735907<=$exp and $exp<762160) {
+    $niveau=89;
+}
+if( 762160<=$exp and $exp<789030) {
+    $niveau=90;
+}
+if( 789030<=$exp and $exp<816525) {
+    $niveau=91;
+}
+if( 816525<=$exp and $exp<844653) {
+    $niveau=92;
+}
+if( 844653<=$exp and $exp<873420) {
+    $niveau=93;
+}
+if( 873420<=$exp and $exp<902835) {
+    $niveau=94;
+}
+if( 902835<=$exp and $exp<932903) {
+    $niveau=95;
+}
+if( 932903<=$exp and $exp<963632) {
+    $niveau=96;
+}
+if( 963632<=$exp and $exp<995030) {
+    $niveau=97;
+}
+if( 995030<=$exp and $exp<1027103) {
+    $niveau=98;
+}
+if( 1027103<=$exp and $exp<1059860) {
+    $niveau=99;
+}
+if( $exp>=1059860) {
+    $niveau=100;
+}
