@@ -63,7 +63,7 @@ class ChasseController extends AbstractController
         if($pokemonDresseur->getNiveau()<=5){
             $newPokemonDresseur->setExp(rand(0,$newPokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()+2)));
         }
-        if($pokemonDresseur->getNiveau()>=98){
+        elseif($pokemonDresseur->getNiveau()>=98){
             $newPokemonDresseur->setExp(rand($newPokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()-5),$newPokemonDresseur->getExpByNiveau(100)));
         }
         else{
