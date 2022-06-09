@@ -45,12 +45,21 @@ class MarketController extends AbstractController
         $dresseur = $this->getUser();
         if($vente->getIdDresseur() === $dresseur){
             $msg = 'Vous ne pouvez pas acheter un de vos pokémons !';
+            return $this->render('market/achat.html.twig', [
+                'msg' => $msg,
+            ]);
         }
         elseif($vente->getPrix() > $dresseur->getArgent()){
             $msg = 'Vous n\'avez pas assez d\'argent pour acheter ce pokemon !';
+            return $this->render('market/achat.html.twig', [
+                'msg' => $msg,
+            ]);
         }
         elseif($vente->getStatut() != 'Terminee'){
             $msg = 'Vous essayez d\'acheter un pokemon déjà vendu !';
+            return $this->render('market/achat.html.twig', [
+                'msg' => $msg,
+            ]);
         }
         else{
             $dresseurVendeur = $vente->getIdDresseur();
