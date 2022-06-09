@@ -55,7 +55,7 @@ class ChasseController extends AbstractController
             array_push($types, $capture->getIdType()->getId());
         }
         $pokemon_capturable = $pokemonRepository->findByListOfId($types);
-        $pokemon = $pokemonRepository->findOneBy(array("id" => rand(1, count($pokemon_capturable))));
+        $pokemon = $pokemonRepository->findOneBy(array("id" => $pokemon_capturable[rand(0, count($pokemon_capturable)-1)]));
         $dresseur = $this->getUser();
         $newPokemonDresseur = new PokemonDresseur();
         $newPokemonDresseur->setIdPokemon($pokemon);
