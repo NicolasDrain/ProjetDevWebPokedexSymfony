@@ -3,18 +3,19 @@
 {% block title %}Hello VenteController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Nicod/Documents/ProjetDevWebSymfony/ProjetDevWebPokedexSymfonyV2/ProjetDevWebPokedexSymfony/src/Controller/VenteController.php'|file_link(0) }}">src/Controller/VenteController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Nicod/Documents/ProjetDevWebSymfony/ProjetDevWebPokedexSymfonyV2/ProjetDevWebPokedexSymfony/templates/vente/index.html.twig'|file_link(0) }}">templates/vente/index.html.twig</a></code></li>
-    </ul>
+Voici la liste de vos pokemons en vente
+<div class="container">
+{% for venteEnCours in ventesEnCours %}
+        <div class="col">
+            Vente en cours :
+            {{ venteEnCours.id }}
+        </div>
+        {% endfor %}
+{% for venteTerminee in ventesTerminee %}
+        <div class="col">
+            Vente terminée :
+            {{ venteTerminee.id }}
+        </div>
+        {% endfor %}
 </div>
 {% endblock %}

@@ -39,6 +39,21 @@ class PokemonDresseurRepository extends ServiceEntityRepository
         }
     }
 
+    public function findPokemonDresseurUnsold($dresseur): array
+    { 
+        $query = $this->createQueryBuilder('p');
+        $query
+        ->leftJoin('App\Entity\Vente', 'v', 'WITH', 'p.id = v.id_pokemon_dresseur')
+        ->andWhere('p.id_dresseur = :dresseur')
+        ->andWhere($query->expr()->orX('v.statut <> :statut')->add('v.statut is NULL'))
+        ->setParameter('dresseur', $dresseur)
+        ->setParameter('statut', 'En cours');
+
+
+
+        return $query->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return PokemonDresseur[] Returns an array of PokemonDresseur objects
 //     */

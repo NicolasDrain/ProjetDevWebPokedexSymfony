@@ -6,9 +6,11 @@ use App\Entity\Dresseur;
 use App\Entity\Vente;
 use App\Form\VenteType;
 use App\Repository\VenteRepository;
+use App\Repository\PokemonDresseurRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,11 +31,24 @@ class VenteController extends AbstractController
     }
 
     #[Route('/new', name: 'new')]
-    public function new(): Response
+    public function new(Request $request, VenteRepository $venteRepository, PokemonDresseurRepository $pokemonDresseurRepository ): Response
     {
         $dresseur = $this->getUser();
-        $list_pokemonDresseur = $dresseur->getPokemonDresseurs();
+        $list_pokemonDresseur = $pokemonDresseurRepository->findPokemonDresseurUnsold($dresseur);
         $form = $this->createForm(VenteType::class, ['listPokemonDresseur' => $list_pokemonDresseur]);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $task = $form->getData();
+            $pokemonDresseur = $task['pokemonDresseur'];
+            $prix = $task['prix'];
+            $vente = new Vente();
+            $vente->setIdDresseur($dresseur);
+            $vente->setIdPokemonDresseur($pokemonDresseur);
+            $vente->setPrix($prix);
+            $vente->setStatut('En cours');
+            $venteRepository->add($vente, true);
+            return $this->redirectToRoute('app_vente_mesVentes');
+        }
         return $this->render('vente/new.html.twig', [
             'form' => $form->createView(),
         ]);

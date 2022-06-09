@@ -9,7 +9,7 @@ check la version de php utilisée par symfony : symfony local:php:list
 commande pour créer le fichier de version : echo 8.1.5 > ~/.php-version
 étape 1 : exécuter composer install
 étape 2 : créer un utilisateur avec nom de compte : "pokemonXhunter" et mot de passe : "pokemonXhunter" sur mysql
-étape 3 : exécuter php bin/console doctrine:database:create
+étape 3 : exécudter php bin/console doctrine:database:create
 étape 4 : exécuter php bin/console doctrine:migrations:migrate
 étape 5 : exécuter php bin/console doctrine:fixtures:load et écrire yes
 étape finale : symfony server:start
