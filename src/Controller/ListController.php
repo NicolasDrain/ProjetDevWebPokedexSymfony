@@ -12,6 +12,19 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/list', name: 'app_list_')]
 class ListController extends AbstractController
 {
+    #[Route('/monPokedex', name: 'pokedex')]
+    public function pokedex(PokemonRepository $pokemonRepository, PokemonDresseurRepository $pokemonDresseurRepository): Response
+    {
+        $dresseur = $this->getUser();
+        $pokemonDresseur = $pokemonDresseurRepository->findBy(array('id_dresseur' => $dresseur));
+        $pokemon = $pokemonRepository->findAll();
+        //dd($pokemon);
+        return $this->render('list/pokedex.html.twig', [
+            'pokemons' => $pokemon
+        ]
+    );
+    }
+
     #[Route('/', name: 'index')]
     public function index(PokemonRepository $pokemonRepository): Response
     {
@@ -29,21 +42,6 @@ class ListController extends AbstractController
         //dd($pokemon);
         return $this->render('list/pokemon.html.twig', [
             'pokemon' => $pokemon
-        ]
-    );
-    }
-
-    #[Route('/monPokedex', name: 'pokedex')]
-    public function pokedex(PokemonRepository $pokemonRepository, PokemonDresseurRepository $pokemonDresseurRepository): Response
-    {
-        dd('Salut');
-        //$dresseur = $this->getUser();
-        //$pokemonDresseur = $pokemonDresseurRepository->findBy(array('id_dresseur' => $dresseur));
-        //$dd($pokemonDresseur);
-        $pokemon = $pokemonRepository->findAll();
-        //dd($pokemon);
-        return $this->render('list/pokedex.html.twig', [
-            'pokemons' => $pokemon
         ]
     );
     }

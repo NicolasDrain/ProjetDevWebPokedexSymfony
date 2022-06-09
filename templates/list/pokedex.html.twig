@@ -1,58 +1,95 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Détail de {{ pokemon.nom }} {% endblock %}
+{% block title %}Liste des pokémons{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/listPokemon.css') }}">
+{% endblock %}
 {% block body %}
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <img src="{{ asset( pokemon.photo ) }}">
-                </img>
-            </div>
-            <div class="col">
-                {{ pokemon.id }}
-            </div>
-            <div class="col">
-                {{ pokemon.nom }}
-            </div>
-            <div class="col">
-                {{ pokemon.idType1.nom }}
-            </div>
-            {% if pokemon.idType2 %}
-                <div class="col">
-                    {{ pokemon.idType2.nom }}
-                </div>
-            {% endif %}
-            {% if pokemon.isEvolution == true %}
-                <div class="col">
-                    Ce pokemon est une évolution
-                </div>
-            {% else %}
-                <div class="col">
-                    Ce pokemon n'est pas une évolution
-                </div>
-            {% endif %}
-            {% if pokemon.isStarter == true %}
-                <div class="col">
-                    Ce pokemon est un starter
-                </div>
-            {% else %}
-                <div class="col">
-                    Ce pokemon n'est pas un starter
-                </div>
-            {% endif %}
-            <div class="col">
-                {{ pokemon.typeCourbeNiveau }}
-            </div>
-            {% if pokemon.canEvolve == true %}
-                <div class="col">
-                    Ce pokemon peut évoluer
-                </div>
-            {% else %}
-                <div class="col">
-                    Ce pokemon ne peut pas évoluer
-                </div>
-            {% endif %}
-        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <tr>
+                <td>
+                    #
+                </td>
+                <td class="text-center">
+                    Image
+                </td>
+                <td>
+                    Nom
+                </td>
+                <td>
+                    Type 1
+                </td>
+                <td>
+                    Type 2
+                </td>
+                <td>
+                    Evolution
+                </td>
+                <td>
+                    Starter
+                </td>
+                <td>
+                    Courbe Niveau
+                </td>
+                <td>
+                    Peut évoluer
+                </td>
+            </tr>
+        {% for pokemon in pokemons %}
+                <tr>
+                    <td>
+                        <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
+                        {{ pokemon.id }}
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
+                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid"></img>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
+                        {{ pokemon.nom }}
+                        </a>
+                    </td>
+                    <td>
+                        {{ pokemon.idType1.nom }}
+                    </td>
+                    <td>
+                        {% if pokemon.idType2 %}
+                        {{ pokemon.idType2.nom }}
+                        {% else %}
+
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if pokemon.isEvolution == true %}
+                        Oui
+                        {% else %}
+                        Non
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if pokemon.isStarter == true %}
+                        Oui
+                        {% else %}
+                        Non
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ pokemon.typeCourbeNiveau }}
+                    </td>
+                    <td>
+                        {% if pokemon.canEvolve == true %}
+                        Oui
+                        {% else %}
+                        Non
+                        {% endif %}
+                    </td>
+                </tr>
+        {% endfor %}
+        </table>
     </div>
 {% endblock %}
