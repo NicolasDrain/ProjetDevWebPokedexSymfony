@@ -163,6 +163,7 @@ class PokemonFixtures extends Fixture
             ['nom'=>'Mewtwo','is_evolution'=>false,'is_starter'=>false,'type_courbe'=>'L','id_type_1'=>'psy','id_type_2'=>NULL,'photo'=>'images/pokemon/150.png','can_evolve'=>false],
             ['nom'=>'Mew','is_evolution'=>false,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'psy','id_type_2'=>NULL,'photo'=>'images/pokemon/151.png','can_evolve'=>false]
         ];
+        $i = 1;
         foreach($array_pokemon as $pokemon){
             $new_pokemon = new Pokemon();
             $new_pokemon->setNom($pokemon['nom']);
@@ -177,6 +178,8 @@ class PokemonFixtures extends Fixture
             }
             $new_pokemon->setPhoto($pokemon['photo']);
             $new_pokemon->setCanEvolve($pokemon['can_evolve']);
+            $this->addReference('pokemon'.$i,$new_pokemon);
+            $i = $i+1;
             $manager->persist($new_pokemon);
         }
 
