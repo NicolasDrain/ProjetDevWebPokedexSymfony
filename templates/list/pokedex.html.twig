@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Détail de {{ pokemon.nom }} {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="{{ asset( pokemon.photo ) }}">
+                </img>
+            </div>
+            <div class="col">
+                {{ pokemon.id }}
+            </div>
+            <div class="col">
+                {{ pokemon.nom }}
+            </div>
+            <div class="col">
+                {{ pokemon.idType1.nom }}
+            </div>
+            {% if pokemon.idType2 %}
+                <div class="col">
+                    {{ pokemon.idType2.nom }}
+                </div>
+            {% endif %}
+            {% if pokemon.isEvolution == true %}
+                <div class="col">
+                    Ce pokemon est une évolution
+                </div>
+            {% else %}
+                <div class="col">
+                    Ce pokemon n'est pas une évolution
+                </div>
+            {% endif %}
+            {% if pokemon.isStarter == true %}
+                <div class="col">
+                    Ce pokemon est un starter
+                </div>
+            {% else %}
+                <div class="col">
+                    Ce pokemon n'est pas un starter
+                </div>
+            {% endif %}
+            <div class="col">
+                {{ pokemon.typeCourbeNiveau }}
+            </div>
+            {% if pokemon.canEvolve == true %}
+                <div class="col">
+                    Ce pokemon peut évoluer
+                </div>
+            {% else %}
+                <div class="col">
+                    Ce pokemon ne peut pas évoluer
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
