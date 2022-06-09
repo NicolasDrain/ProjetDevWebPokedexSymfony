@@ -18,7 +18,7 @@
                     Surnom
                 </td>
                 <td>
-                    Expérience
+                    Niveau
                 </td>
             </tr>
         {% for pokemon in pokemonDresseur %}
@@ -37,7 +37,7 @@
                         {{ pokemon.surnom }}
                     </td>
                     <td>
-                        {{ pokemon.exp }}
+                        {{ pokemon.getNiveau() }}
                     </td>
                     
                 </tr>
