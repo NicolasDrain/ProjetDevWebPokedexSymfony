@@ -73,7 +73,7 @@ class MarketController extends AbstractController
             $dresseurRepository->add($dresseur, true);
             $venteRepository->add($vente, true);
             $niveau = $pokemonDresseur->getNiveau();
-            $msg = 'Achat confirmé !';
+            $msg = '';
         }
         return $this->render('market/achat.html.twig', [
             'msg' => $msg,

@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container">
         <div class="row">
-    {% if msg == 'Achat confirmé !' %}
+    {% if msg == '' %}
                 <p>
                     Féliciatation {{ dresseur.nom }} vous venez d'acheter un {{ pokemonDresseur.idPokemon.nom }} de niveau {{ niveau }} pour {{ vente.prix }} au dresseur {{ dresseurVendeur.nom }}.
                 </p>
