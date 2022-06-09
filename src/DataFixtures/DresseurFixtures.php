@@ -20,6 +20,7 @@ class DresseurFixtures extends Fixture
         $admin->setNom('Admin');
         $admin->setPassword($this->passwordEncoder->hashPassword($admin, 'azerty'));
         $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setArgent(300000);
         $this->addReference('dresseur1',$admin);
         $manager->persist($admin);
 

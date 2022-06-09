@@ -9,6 +9,7 @@ use App\Entity\Type;
 use App\Entity\Capture;
 use App\Entity\Region;
 use App\Entity\Vente;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -25,6 +26,7 @@ class DashboardController extends AbstractDashboardController
         
     }
     #[Route('/admin', name: 'admin')]
+    #[Security("is_granted('ROLE_USER')")]
     public function index(): Response
     {
         $url = $this->adminUrlGenerator
@@ -66,12 +68,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
             MenuItem::linkToCrud('Create Vente', 'fas fa-plus', Vente::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Vente', 'fas fa-eye', Vente::class)
-        ]);
-
-        yield MenuItem::section('Type');
-        yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-            MenuItem::linkToCrud('Create Type', 'fas fa-plus', Type::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Show Type', 'fas fa-eye', Type::class)
         ]);
 
         yield MenuItem::section('Type');

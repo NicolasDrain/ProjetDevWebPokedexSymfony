@@ -39,6 +39,20 @@ class VenteRepository extends ServiceEntityRepository
         }
     }
 
+    public function findPokemonBuyable($dresseur): array
+    { 
+        $query = $this->createQueryBuilder('p')
+        ->andWhere('p.id_dresseur != :dresseur')
+        ->andWhere('p.statut = :statut')
+        ->setParameter('dresseur', $dresseur)
+        ->setParameter('statut', 'En cours');
+
+
+
+        return $query->getQuery()->getResult();
+    }
+
+
 //    /**
 //     * @return Vente[] Returns an array of Vente objects
 //     */
