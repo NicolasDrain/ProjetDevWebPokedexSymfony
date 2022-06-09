@@ -55,7 +55,7 @@ class MarketController extends AbstractController
                 'msg' => $msg,
             ]);
         }
-        elseif($vente->getStatut() != 'Terminee'){
+        elseif($vente->getStatut() == 'Terminee'){
             $msg = 'Vous essayez d\'acheter un pokemon déjà vendu !';
             return $this->render('market/achat.html.twig', [
                 'msg' => $msg,
