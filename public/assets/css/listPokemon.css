@@ -1,3 +1,6 @@
 .img-fluid{
     max-width: 40%;
 }
+.img-black{
+    filter: brightness(0%);
+ }

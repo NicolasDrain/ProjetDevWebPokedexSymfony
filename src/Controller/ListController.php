@@ -17,10 +17,15 @@ class ListController extends AbstractController
     {
         $dresseur = $this->getUser();
         $pokemonDresseur = $pokemonDresseurRepository->findBy(array('id_dresseur' => $dresseur));
+        $listPokemonDresseur = [];
+        foreach ($pokemonDresseur as $pk){
+            array_push($listPokemonDresseur, $pk->getIdPokemon());
+        }
         $pokemon = $pokemonRepository->findAll();
         //dd($pokemon);
         return $this->render('list/pokedex.html.twig', [
-            'pokemons' => $pokemon
+            'pokemons' => $pokemon,
+            'pokemonDresseur' => $listPokemonDresseur,
         ]
     );
     }
