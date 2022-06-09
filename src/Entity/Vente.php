@@ -23,6 +23,10 @@ class Vente
     #[ORM\Column(type: 'string', length: 255)]
     private $statut;
 
+    #[ORM\ManyToOne(targetEntity: Dresseur::class, inversedBy: 'ventes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $id_dresseur;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +64,18 @@ class Vente
     public function setStatut(string $statut): self
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    public function getIdDresseur(): ?Dresseur
+    {
+        return $this->id_dresseur;
+    }
+
+    public function setIdDresseur(?Dresseur $id_dresseur): self
+    {
+        $this->id_dresseur = $id_dresseur;
 
         return $this;
     }

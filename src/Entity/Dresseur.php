@@ -40,11 +40,15 @@ class Dresseur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'id_dresseur', targetEntity: PokemonDresseur::class)]
     private $pokemonDresseurs;
 
+    #[ORM\OneToMany(mappedBy: 'id_dresseur', targetEntity: Vente::class)]
+    private $ventes;
+
     public function __construct()
     {
         $this->pokemonDresseurs = new ArrayCollection();
         $this->starter_taken = false;
         $this->argent = 5000;
+        $this->ventes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -177,6 +181,36 @@ class Dresseur implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($pokemonDresseur->getIdDresseur() === $this) {
                 $pokemonDresseur->setIdDresseur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Vente>
+     */
+    public function getVentes(): Collection
+    {
+        return $this->ventes;
+    }
+
+    public function addVente(Vente $vente): self
+    {
+        if (!$this->ventes->contains($vente)) {
+            $this->ventes[] = $vente;
+            $vente->setIdDresseur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVente(Vente $vente): self
+    {
+        if ($this->ventes->removeElement($vente)) {
+            // set the owning side to null (unless already changed)
+            if ($vente->getIdDresseur() === $this) {
+                $vente->setIdDresseur(null);
             }
         }
 

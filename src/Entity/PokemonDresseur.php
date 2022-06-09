@@ -149,7 +149,7 @@ class PokemonDresseur
                 $niveau=1;
             }
             else{
-                $niveau=pow($this->exp/1,25,1/3);
+                $niveau=pow($this->exp/1.25,1/3);
             }
         }
         if($niveau>100){

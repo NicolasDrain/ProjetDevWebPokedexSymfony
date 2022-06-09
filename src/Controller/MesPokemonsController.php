@@ -27,7 +27,6 @@ class MesPokemonsController extends AbstractController
     #[Security("is_granted('ROLE_USER') and user === pokemonDresseur.getIdDresseur()")]
     public function modifyPokemon(PokemonDresseur $pokemonDresseur): Response
     {
-        dd($pokemonDresseur);
         $dresseur = $this->getUser();
         return $this->render('mes_pokemons/index.html.twig', [
             'pokemonDresseur' => $pokemonDresseur,
