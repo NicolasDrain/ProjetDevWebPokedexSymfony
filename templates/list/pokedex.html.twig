@@ -38,6 +38,7 @@
                 </td>
             </tr>
         {% for pokemon in pokemons %}
+            {% if pokemon in pokemonDresseur %}
                 <tr>
                     <td>
                         <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
@@ -46,7 +47,7 @@
                     </td>
                     <td class="text-center">
                         <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
-                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid"></img>
+                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid" ></img>
                         </a>
                     </td>
                     <td>
@@ -89,6 +90,47 @@
                         {% endif %}
                     </td>
                 </tr>
+                {% else %}
+                    <tr>
+                    <td>
+                  
+                        {{ pokemon.id }}
+                        
+                    </td>
+                    <td class="text-center">
+                        
+                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid img-black" ></img>
+                       
+                    </td>
+                    <td>
+                 
+                        ???
+                
+                    </td>
+                    <td>
+                        {{ pokemon.idType1.nom }}
+                    </td>
+                    <td>
+                        {% if pokemon.idType2 %}
+                        {{ pokemon.idType2.nom }}
+                        {% else %}
+
+                        {% endif %}
+                    </td>
+                    <td>
+                        ???
+                    </td>
+                    <td>
+                        ???
+                    </td>
+                    <td>
+                        ???
+                    </td>
+                    <td>
+                        ???
+                    </td>
+                </tr>
+                {% endif %}
         {% endfor %}
         </table>
     </div>
