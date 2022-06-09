@@ -28,7 +28,9 @@ class EntrainementController extends AbstractController
         if(!$pokemonDresseur->isAvailable()){
             return $this->redirectToRoute('app_entrainement_pokemon_indisponible',[], Response::HTTP_SEE_OTHER);
         }
-        $exp_gagne=rand(10,30);
+        $p1 = ($pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()+1)-$pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()))*0.6;
+        $p2 = $pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()+2)-$pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau());
+        $exp_gagne=rand($p1,$p2);
         $pokemonDresseur->setExp($pokemonDresseur->getExp()+$exp_gagne);
         $pokemonDresseur->setDateTimeDerniereActivite(new \DateTime());
         $niveau = $pokemonDresseur->getNiveau();
