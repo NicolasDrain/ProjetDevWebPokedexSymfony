@@ -46,8 +46,11 @@ class MarketController extends AbstractController
         if($vente->getIdDresseur() === $dresseur){
             $msg = 'Vous ne pouvez pas acheter un de vos pokémons !';
         }
-        if($vente->getPrix() > $dresseur->getArgent()){
+        elseif($vente->getPrix() > $dresseur->getArgent()){
             $msg = 'Vous n\'avez pas assez d\'argent pour acheter ce pokemon !';
+        }
+        elseif($vente->getStatut() != 'Terminee'){
+            $msg = 'Vous essayez d\'acheter un pokemon déjà vendu !';
         }
         else{
             $dresseurVendeur = $vente->getIdDresseur();
@@ -70,14 +73,6 @@ class MarketController extends AbstractController
             'dresseur' => $dresseur,
             'dresseurVendeur' => $dresseurVendeur,
             'niveau' => $niveau,
-        ]);
-    }
-
-    #[Route('/mesAchats', name: 'mesAchat')]
-    public function mesAchat(): Response
-    {
-        return $this->render('market/index.html.twig', [
-            'controller_name' => 'MarketController',
         ]);
     }
 }
