@@ -3,8 +3,9 @@
 {% block title %}Liste des pokémons{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/listPokemon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/list/pokedex.css') }}">
 {% endblock %}
+
 {% block body %}
     <div class="container">
         <table class="table table-striped table-hover table-bordered">
@@ -47,7 +48,7 @@
                     </td>
                     <td class="text-center">
                         <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
-                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid" ></img>
+                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid img-poke" ></img>
                         </a>
                     </td>
                     <td>
@@ -56,11 +57,13 @@
                         </a>
                     </td>
                     <td>
-                        {{ pokemon.idType1.nom }}
+                        {{ pokemon.idType1.nom }} :
+                        <img src="{{ asset( 'images/type/'~pokemon.idType1.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
                     </td>
                     <td>
                         {% if pokemon.idType2 %}
-                        {{ pokemon.idType2.nom }}
+                        {{ pokemon.idType2.nom }} :
+                        <img src="{{ asset( 'images/type/'~pokemon.idType2.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
                         {% else %}
 
                         {% endif %}
@@ -99,7 +102,7 @@
                     </td>
                     <td class="text-center">
                         
-                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid img-black" ></img>
+                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid img-black img-poke" ></img>
                        
                     </td>
                     <td>
@@ -108,11 +111,13 @@
                 
                     </td>
                     <td>
-                        {{ pokemon.idType1.nom }}
+                        {{ pokemon.idType1.nom }} :
+                        <img src="{{ asset( 'images/type/'~pokemon.idType1.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
                     </td>
                     <td>
                         {% if pokemon.idType2 %}
-                        {{ pokemon.idType2.nom }}
+                        {{ pokemon.idType2.nom }} :
+                        <img src="{{ asset( 'images/type/'~pokemon.idType2.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
                         {% else %}
 
                         {% endif %}

@@ -77,7 +77,12 @@ class PokemonDresseur
     public function setIdPokemon(?Pokemon $id_pokemon): self
     {
         $this->id_pokemon = $id_pokemon;
-
+        if($id_pokemon->getNom() == 'NidoranF' or $id_pokemon->getNom() == 'Nidorina' or $id_pokemon->getNom() == 'Nidoqueen'){
+            $this->setGenre('F');
+        }
+        elseif($id_pokemon->getNom() == 'NidoranM' or $id_pokemon->getNom() == 'Nidorino' or $id_pokemon->getNom() == 'Nidoking'){
+            $this->setGenre('M');
+        }
         return $this;
     }
 
