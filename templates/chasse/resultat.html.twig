@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Félicitations {{ pokemonDresseur.idPokemon.nom }} {% endblock %}
+{% block title %}Félicitations {{ pokemonDresseur.idPokemon.nom }} ! {% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('assets/css/chasse/ville.css') }}">
@@ -8,13 +8,18 @@
 
 {% block body %}
     <div class="container">
-        <div class="row">
-            <div class="col">
-                Votre pokémon {{ pokemonDresseur.idPokemon.nom }} a chassé dans la region {{ nomRegion }} et a capturé un {{ newPokemonDresseur.idPokemon.nom }} de niveau {{ niveau }}. Félicitations ! <br>
-                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="rounded float-right">
-                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="rounded mx-auto d-block"> 
-                <img src="{{ asset( newPokemonDresseur.idPokemon.photo ) }}" class="rounded float-left"> 
+                Votre pokémon {{ pokemonDresseur.idPokemon.nom }} a chassé dans la region {{ nomRegion }} et a capturé un {{ newPokemonDresseur.idPokemon.nom }} de niveau {{ niveau }}. Félicitations ! 
+                <br><br>
+                <div class="row">
+                <div class="col-sm">
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid"> 
+                </div>
+                <div class="col-sm">
+                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="img-fluid2"> 
+                </div>
+                <div class="col-sm">
+                <img src="{{ asset( newPokemonDresseur.idPokemon.photo ) }}" class="img-fluid"> 
+                </div>
             </div>
         </div>
-    </div>
 {% endblock %}
