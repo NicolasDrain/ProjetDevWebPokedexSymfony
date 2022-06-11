@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PecheController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            {% if res == 'manqueArgent' %}
+                <p>
+                    {{ info[0] }}
+                </p>
+            {% elseif res =='peu' %}
+                <p>
+                    {{ info[0] }}
+                </p>
+            {% elseif res =='beaucoup' %}
+                <p>
+                    {{ info[0] }}
+                </p>
+            {% elseif res =='pokemon' %}
+                <p>
+                    Bravo tu as pêché un {{ info[0].idPokemon.nom }} de niveau {{ info[0].getNiveau() }}
+                </p>
+            {% elseif res =='doublePokemon' %}
+                <p>
+                    Bravo tu as pêché deux pokémons, un {{ info[0].idPokemon.nom }} de niveau {{ info[0].getNiveau() }} et un {{ info[1].idPokemon.nom }} de niveau {{ info[1].getNiveau() }}
+                </p>
+            {% elseif res =='chaussette' %}
+                <p>
+                    {{ info[0] }}
+                </p>
+            {% elseif res =='algue' %}
+                <p>
+                    {{ info[0] }}
+                </p>
+            {% endif %}
+        </div>
+        <div class="col-2">
+            <a href="{{ path('app_peche_index') }}">
+                <button type="button" class="btn btn-warning">Choix Appât</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

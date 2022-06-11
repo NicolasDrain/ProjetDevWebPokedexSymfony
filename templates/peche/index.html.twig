@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PecheController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <p>
+            Vous vous apprétez à partir à la pêche.
+            Veuillez choisir un appât !
+        </p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                Appât faible - Prix 500 - Vous avez 1/10 de gagner 1500, 4/10 de gagner 500, 3/10 de gagner un pokemon eau de niveau 15 à 25, 1/10 de gagner une chaussette pourrie, et 1/10 de gagner une algue
+            </p>
+        </div>
+        <div class="col">
+            <a href="{{ path('app_peche_resultat',{appat:'faible'}) }}">
+                <button type="button" class="btn btn-info">Appât faible</button>
+            </a>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                Appât moyen - Prix 1000 - Vous avez 2/10 de gagner 3000, 2/10 de gagner 1000, 4/10 de gagner un pokemon eau de niveau 25 à 40, 1/10 de gagner une chaussette pourrie, et 1/10 de gagner une algue
+            </p>
+        </div>
+        <div class="col">
+            <a href="{{ path('app_peche_resultat',{appat:'moyen'}) }}">
+                <button type="button" class="btn btn-warning">Appât moyen</button>
+            </a>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                Appât fort - Prix 2000 - Vous avez 3/10 de gagner 6000, 1/10 de gagner 2000, 2/10 de gagner deux pokemon eau de niveau 40 à 60, 3/10 de gagner un pokemon eau de niveau 40 à 60, 1/10 de gagner une chaussette pourrie
+            </p>
+        </div>
+        <div class="col">
+            <a href="{{ path('app_peche_resultat',{appat:'fort'}) }}">
+                <button type="button" class="btn btn-success">Appât fort</button>
+            </a>
+    </div>
+</div>
+{% endblock %}
