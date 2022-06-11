@@ -24,12 +24,13 @@ Félicitations {{ pokemonDresseur.idPokemon.nom }} !
             <div class="col">
                 {% if has_evolved %}
                 Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp.
-                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid" class="img-evolue1">  
-                <img src="{{ asset( anciennePhoto ) }}" class="img-fluid" class="img-evolue2">  
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-evolue1 img-pokemon">  
+                <img src="{{ asset( anciennePhoto ) }}" class="img-fluid img-evolue2 img-pokemon">  
                 {% else %}
                 Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp !
+                <br><br>
                 <div class="col-sm">
-                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid" class"img-notEvolve"> 
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-notEvolve img-pokemon"> 
                 </div>
                 {% endif %}
             </div>

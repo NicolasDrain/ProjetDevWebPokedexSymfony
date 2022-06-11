@@ -1,4 +1,9 @@
+.img-fluid{
+}
 
+.img-pokemon{
+    max-width: 25%;
+}
 
 .img-evolue1{
     animation: notEvolveEvolution 1.5s forwards;
@@ -10,7 +15,6 @@
     animation-iteration-count: 2;
     animation-delay: 3s;
     z-index: 1;
-    max-width: 10%;
     filter: opacity(0%);
 }
 
