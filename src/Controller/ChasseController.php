@@ -21,23 +21,25 @@ use Symfony\Component\Routing\Annotation\Route;
 class ChasseController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(PokemonDresseurRepository $pokemonDresseurRepository): Response
     {
+        $dresseur = $this->getUser();
+        $list_pokemon_disponible = $pokemonDresseurRepository->findPokemonAvailable($dresseur);
         return $this->render('chasse/index.html.twig', [
-            'controller_name' => 'ChasseController',
+            'listPokemonDisponible' => $list_pokemon_disponible,
         ]);
     }
 
     #[Security("is_granted('ROLE_USER') and user === pokemonDresseur.getIdDresseur()")]
     #[Route('/{id}', name: 'choix_region')]
-    public function choixRegion(PokemonDresseur $pokemonDresseur): Response
+    public function choixRegion(PokemonDresseur $pokemonDresseur, $id): Response
     {
         if(!$pokemonDresseur->isAvailable()){
             return $this->redirectToRoute('app_entrainement_pokemon_indisponible',[], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('chasse/index.html.twig', [
-            'controller_name' => 'ChasseController',
+        return $this->render('chasse/region.html.twig', [
+            'id' => $id,
         ]);
     }
 
