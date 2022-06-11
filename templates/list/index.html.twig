@@ -46,7 +46,7 @@
                     </td>
                     <td class="text-center">
                         <a href="{{ path('app_list_pokemon', {nom:pokemon.nom}) }}">
-                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid"></img>
+                        <img src="{{ asset( pokemon.photo ) }}" class="img-fluid img-poke"></img>
                         </a>
                     </td>
                     <td>
@@ -55,11 +55,13 @@
                         </a>
                     </td>
                     <td>
-                        {{ pokemon.idType1.nom }}
+                        {{ pokemon.idType1.nom }} : 
+                        <img src="{{ asset( 'images/type/'~pokemon.idType1.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
                     </td>
                     <td>
                         {% if pokemon.idType2 %}
-                        {{ pokemon.idType2.nom }}
+                        {{ pokemon.idType2.nom }} : 
+                        <img src="{{ asset( 'images/type/'~pokemon.idType2.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
                         {% else %}
 
                         {% endif %}
