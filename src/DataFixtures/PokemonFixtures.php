@@ -42,7 +42,7 @@ class PokemonFixtures extends Fixture
             ['nom'=>'NidoranF','is_evolution'=>false,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'poison','id_type_2'=>NULL,'photo'=>'images/pokemon/029.png','can_evolve'=>true,'niveau_evolution'=>16],
             ['nom'=>'Nidorina','is_evolution'=>true,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'poison','id_type_2'=>NULL,'photo'=>'images/pokemon/030.png','can_evolve'=>true,'niveau_evolution'=>32],
             ['nom'=>'Nidoqueen','is_evolution'=>true,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'poison','id_type_2'=>'sol','photo'=>'images/pokemon/031.png','can_evolve'=>false,'niveau_evolution'=>NULL],
-            ['nom'=>'NidoranF','is_evolution'=>false,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'poison','id_type_2'=>NULL,'photo'=>'images/pokemon/032.png','can_evolve'=>true,'niveau_evolution'=>16],
+            ['nom'=>'NidoranM','is_evolution'=>false,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'poison','id_type_2'=>NULL,'photo'=>'images/pokemon/032.png','can_evolve'=>true,'niveau_evolution'=>16],
             ['nom'=>'Nidorino','is_evolution'=>true,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'poison','id_type_2'=>NULL,'photo'=>'images/pokemon/033.png','can_evolve'=>true,'niveau_evolution'=>32],
             ['nom'=>'Nidoking','is_evolution'=>true,'is_starter'=>false,'type_courbe'=>'P','id_type_1'=>'poison','id_type_2'=>'sol','photo'=>'images/pokemon/034.png','can_evolve'=>false,'niveau_evolution'=>NULL],
             ['nom'=>'Mélofée','is_evolution'=>false,'is_starter'=>false,'type_courbe'=>'R','id_type_1'=>'fée','id_type_2'=>NULL,'photo'=>'images/pokemon/035.png','can_evolve'=>true,'niveau_evolution'=>25],

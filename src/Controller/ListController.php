@@ -45,7 +45,7 @@ class ListController extends AbstractController
     public function pokemon(Pokemon $pokemon): Response
     {
         //dd($pokemon);
-        return $this->render('list/pokemon.html.twig', [
+        return $this->render('list/detail.html.twig', [
             'pokemon' => $pokemon
         ]
     );
