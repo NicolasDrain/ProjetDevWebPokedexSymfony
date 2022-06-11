@@ -1,0 +1,36 @@
+.img-poke{
+    max-width: 50%;
+}
+.img-logo{
+    max-width: 20%;
+}
+.img-poke-anim{
+    animation: notEvolve 1.5s alternate;
+    animation-iteration-count: 4;
+}
+
+@keyframes notEvolve{
+    from{
+        filter: opacity(100%);
+    }
+
+    to{
+        filter: brightness(0%);
+        filter: opacity(20%);
+        transform: scale(1.2);
+    }
+}
+
+.img-pokeball-anim{
+    animation: pokeball 2s forwards;
+    animation-iteration-count: 1;
+}
+@keyframes pokeball{
+    from{
+        transform: skewX(50deg) translateX(-400%);
+    }
+   
+    to{
+        transform : skewX(0deg) translateX(430%);
+    }
+}

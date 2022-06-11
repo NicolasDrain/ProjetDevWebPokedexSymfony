@@ -3,7 +3,7 @@
 {% block title %}Félicitations {{ pokemonDresseur.idPokemon.nom }} ! {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/chasse/ville.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/chasse/resultat.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -15,10 +15,10 @@
                 <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-poke"> 
                 </div>
                 <div class="col-sm">
-                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="img-fluid img-logo"> 
+                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="img-fluid img-logo img-pokeball-anim"> 
                 </div>
                 <div class="col-sm">
-                <img src="{{ asset( newPokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-poke"> 
+                <img src="{{ asset( newPokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-poke img-poke-anim"> 
                 </div>
             </div>
         </div>

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChasseController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/chasse/region.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                    <img class="card-img-top border-bottom img-region" src="{{ asset( 'images/region/montagne.png' ) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Montagne</h5>
+                        <p class="card-text">Type capturable :</p>
+                        <p class="card-text">Acier, Dragon, Glace, Normal, Roche</p>
+                        <a href="{{ path('app_chasse_final', {id:id,nom_region:'montagne'}) }}" class="btn btn-success">Chasser</a>
+                    </div>
+                </div>
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                    <img class="card-img-top border-bottom" src="{{ asset( 'images/region/prairie.png' ) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Prairie</h5>
+                        <p class="card-text">Type capturable :</p>
+                        <p class="card-text">Feu, Normal, Plante, Sol, Vol, Fée</p>
+                        <a href="{{ path('app_chasse_final', {id:id,nom_region:'prairie'}) }}" class="btn btn-success">Chasser</a>
+                    </div>
+                </div>
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                    <img class="card-img-top border-bottom" src="{{ asset( 'images/region/ville.png' ) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Ville</h5>
+                        <p class="card-text">Type capturable :</p>
+                        <p class="card-text">Combat, Electrik, Normal, Psy</p>
+                        <a href="{{ path('app_chasse_final', {id:id,nom_region:'ville'}) }}" class="btn btn-success">Chasser</a>
+                    </div>
+                </div>
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                    <img class="card-img-top border-bottom" src="{{ asset( 'images/region/foret.png' ) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Forêt</h5>
+                        <p class="card-text">Type capturable :</p>
+                        <p class="card-text">Insecte, Normal, Spectre, Vol</p>
+                        <a href="{{ path('app_chasse_final', {id:id,nom_region:'foret'}) }}" class="btn btn-success">Chasser</a>
+                    </div>
+                </div>
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                    <img class="card-img-top border-bottom" src="{{ asset( 'images/region/plage.png' ) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Plage</h5>
+                        <p class="card-text">Type capturable :</p>
+                        <p class="card-text">Dragon, Eau, Normal, Poisson</p>
+                        <a href="{{ path('app_chasse_final', {id:id,nom_region:'plage'}) }}" class="btn btn-success">Chasser</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+{% endblock %}
