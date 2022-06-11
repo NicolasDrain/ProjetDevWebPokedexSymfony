@@ -29,16 +29,6 @@ class MarketController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'detail')]
-    public function detail(Vente $vente): Response
-    {
-        $niveau = $vente->getIdPokemonDresseur()->getNiveau();
-        return $this->render('market/detail.html.twig', [
-            'vente' => $vente,
-            'niveau' => $niveau,
-        ]);
-    }
-
     #[Route('/{id}/achat', name: 'achat')]
     public function achat(Vente $vente,VenteRepository $venteRepository, DresseurRepository $dresseurRepository, PokemonDresseurRepository $pokemonDresseurRepository): Response
     {

@@ -15,10 +15,12 @@ class EntrainementController extends AbstractController
 {
     #[Route('/entrainement', name: 'app_entrainement')]
     #[IsGranted('ROLE_USER')]
-    public function index(): Response
+    public function index(PokemonDresseurRepository $pokemonDresseurRepository): Response
     {
+        $dresseur = $this->getUser();
+        $list_pokemon_disponible = $pokemonDresseurRepository->findPokemonAvailable($dresseur);
         return $this->render('entrainement/index.html.twig', [
-            'controller_name' => 'EntrainementController',
+            'listPokemonDisponible' => $list_pokemon_disponible,
         ]);
     }
 
