@@ -18,13 +18,6 @@ class VenteAndPokemonDresseurFixtures extends Fixture
                 $pokemonDresseur = new PokemonDresseur();
                 $pokemonDresseur->setIdDresseur($dresseur);
                 $pokemonDresseur->setIdPokemon($this->getReference('pokemon'.rand(1,151)));
-                if(rand(0,1)==1){
-                    $genre = 'M';
-                }
-                else{
-                    $genre = 'F';
-                }
-                $pokemonDresseur->setGenre($genre);
                 $pokemonDresseur->setExp(rand(0,30000));
                 array_push($list_pokemon_dresseur, $pokemonDresseur);
                 $manager->persist($pokemonDresseur);
