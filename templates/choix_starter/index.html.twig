@@ -11,18 +11,30 @@
             </p>
         </div>
     </div>
-    <div class="row justify-content-md-center">
+    <table class="table">
         {% for pokemon in starter_pokemon %}
+        <th>
         <a href="{{ path('app_add_starter', {id:pokemon.id}) }}">
             <div class="col-1">
                 {{ pokemon.nom }}
             </div>
+            </th>
+             {% endfor %}
+        </tr>
+    <div class="row justify-content-md-center">
+        {% for pokemon in starter_pokemon %}
+        <th>
             <div class="col-3">
                 <img width="50%" heigth="50%" src="{{ asset( pokemon.photo ) }}">
                 </img>
             </div>
         </a>
+        </th>
+        
         {% endfor %}
+        </tr>
     </div>
+    </tbody>
+    </table>
 </div>
 {% endblock %}

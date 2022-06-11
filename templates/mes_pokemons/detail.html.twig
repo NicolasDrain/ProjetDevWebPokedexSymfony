@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Détail de {{ pokemon.nom }} {% endblock %}
+{% block title %} Détail de {{ pokemonDresseur.idPokemon.nom }} {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/mesPokemons/detail.css') }}">
+{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -12,6 +16,7 @@
                         <th scope="col">Photo</th>
                         <th scope="col">Id</th>
                         <th scope="col">Nom</th>
+                        <th scope="col">Surnom</th>
                         <th scope="col">Type1</th>
                         <th scope="col">Type2</th>
                         <th scope="col">Évolution?</th>
@@ -23,33 +28,38 @@
                 <tbody>
                 <tr>
                 <td>
-                <img src="{{ asset( pokemon.photo ) }}" class="img-fluid">
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid">
                 </img>
                 </td>
             </div>
                     <td>
             <div class="col">
-                {{ pokemon.id }}
+                {{ pokemonDresseur.idPokemon.id }}
             </div>
             </td>
             <td>
             <div class="col">
-                {{ pokemon.nom }}
+                {{ pokemonDresseur.idPokemon.nom }}
+            </div>
+            </td>
+             <td>
+            <div class="col">
+                {{ pokemonDresseur.surnom }}
             </div>
             </td>
             <td>
             <div class="col">
-                {{ pokemon.idType1.nom }}
+                {{ pokemonDresseur.idPokemon.idType1.nom }}
             </div>
             </td>
             <td>
-            {% if pokemon.idType2 %}
+            {% if pokemonDresseur.idPokemon.idType2 %}
                 <div class="col">
-                    {{ pokemon.idType2.nom }}
+                    {{ pokemonDresseur.idPokemon.idType2.nom }}
                 </div>
             {% endif %}
             </td>
-            {% if pokemon.isEvolution == true %}
+            {% if pokemonDresseur.idPokemon.isEvolution == true %}
             <td>
                 <div class="col">
                     Ce Pokemon est une évolution
@@ -62,7 +72,7 @@
                 </div>
                 </td>
             {% endif %}
-            {% if pokemon.isStarter == true %}
+            {% if pokemonDresseur.idPokemon.isStarter == true %}
             <td>
                 <div class="col">
                     Ce Pokemon est un starter
@@ -77,10 +87,10 @@
             {% endif %}
             <td>
             <div class="col">
-                {{ pokemon.typeCourbeNiveau }}
+                {{ pokemonDresseur.idPokemon.typeCourbeNiveau }}
             </div>
             </td>
-            {% if pokemon.canEvolve == true %}
+            {% if pokemonDresseur.idPokemon.canEvolve == true %}
             <td>
                 <div class="col">
                     Ce Pokemon peut évoluer

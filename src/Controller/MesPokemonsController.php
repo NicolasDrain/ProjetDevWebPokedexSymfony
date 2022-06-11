@@ -28,7 +28,7 @@ class MesPokemonsController extends AbstractController
     public function modifyPokemon(PokemonDresseur $pokemonDresseur): Response
     {
         $dresseur = $this->getUser();
-        return $this->render('mes_pokemons/index.html.twig', [
+        return $this->render('mes_pokemons/detail.html.twig', [
             'pokemonDresseur' => $pokemonDresseur,
         ]);
     }
