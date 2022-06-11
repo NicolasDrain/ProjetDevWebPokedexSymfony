@@ -43,6 +43,9 @@ class Pokemon
     #[ORM\OneToMany(mappedBy: 'id_pokemon', targetEntity: PokemonDresseur::class)]
     private $pokemonDresseurs;
 
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $niveau_evolution;
+
     public function __construct()
     {
         $this->pokemonDresseurs = new ArrayCollection();
@@ -145,6 +148,18 @@ class Pokemon
     public function setCanEvolve(bool $can_evolve): self
     {
         $this->can_evolve = $can_evolve;
+
+        return $this;
+    }
+
+    public function getNiveauEvolution(): ?int
+    {
+        return $this->niveau_evolution;
+    }
+
+    public function setNiveauEvolution(?int $niveau_evolution): self
+    {
+        $this->niveau_evolution = $niveau_evolution;
 
         return $this;
     }

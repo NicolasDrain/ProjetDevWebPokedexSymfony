@@ -6,10 +6,11 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                {{ pokemonDresseur.idPokemon.nom }}
-                {{ pokemonDresseur.exp }}
-                {{ niveau }}
-                {{ exp_gagne }}
+                {% if has_evolved %}
+                Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }}. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }}.
+                {% else %}
+                Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }}. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }}
+                {% endif %}
             </div>
         </div>
     </div>

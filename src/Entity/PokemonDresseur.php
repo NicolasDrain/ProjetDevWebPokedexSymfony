@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PokemonDresseurRepository;
+use App\Repository\PokemonRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -181,6 +182,17 @@ class PokemonDresseur
         $date = new \DateTime();
         $date2 = date_add($this->getDateTimeDerniereActivite(),date_interval_create_from_date_string('1 hour'));
         return ($date>$date2);
+    }
+
+    public function canEvolve(): ?bool
+    {
+        return ($this->getIdPokemon()->isCanEvolve() and ($this->getNiveau()>=$this->getIdPokemon()->getNiveauEvolution()));
+    }
+
+    public function makeEvolve($pokemon): self
+    {
+        $this->setIdPokemon($pokemon);
+        return $this;
     }
 
     /**

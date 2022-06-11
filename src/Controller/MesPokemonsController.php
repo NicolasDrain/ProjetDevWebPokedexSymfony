@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\PokemonDresseurRepository;
+use App\Repository\PokemonRepository;
 use App\Entity\PokemonDresseur;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
