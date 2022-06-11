@@ -152,6 +152,18 @@ class Pokemon
         return $this;
     }
 
+    public function getNiveauEvolution(): ?int
+    {
+        return $this->niveau_evolution;
+    }
+
+    public function setNiveauEvolution(?int $niveau_evolution): self
+    {
+        $this->niveau_evolution = $niveau_evolution;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, PokemonDresseur>
      */
@@ -178,18 +190,6 @@ class Pokemon
                 $pokemonDresseur->setIdPokemon(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getNiveauEvolution(): ?int
-    {
-        return $this->niveau_evolution;
-    }
-
-    public function setNiveauEvolution(?int $niveau_evolution): self
-    {
-        $this->niveau_evolution = $niveau_evolution;
 
         return $this;
     }
