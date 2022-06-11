@@ -54,6 +54,19 @@ class PokemonDresseurRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
+    public function findPokemonAvailable($dresseur): array
+    { 
+        $dateTime = new \DateTime("-1 hour");
+        $query = $this->createQueryBuilder('p');
+        $query
+        ->andWhere('p.id_dresseur = :dresseur')
+        ->andWhere('p.date_time_derniere_activite < :dateTime')
+        ->setParameter('dresseur', $dresseur)
+        ->setParameter('dateTime', $dateTime);
+
+        return $query->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return PokemonDresseur[] Returns an array of PokemonDresseur objects
 //     */
