@@ -1,9 +1,9 @@
-.img-poke{
-    max-width: 40%;
-}
 .img-black{
     filter: brightness(0%); 
  }
+ .img-poke{
+    max-width: 40%;
+}
  .img-logo-type{
     max-width: 20%;
 }

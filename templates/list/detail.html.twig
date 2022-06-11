@@ -2,6 +2,10 @@
 
 {% block title %} Détail de {{ pokemon.nom }} {% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/list/detail.css') }}">
+{% endblock %}
+
 {% block body %}
     <div class="container">
         <div class="row">
@@ -23,7 +27,7 @@
                 <tbody>
                 <tr>
                 <td>
-                <img src="{{ asset( pokemon.photo ) }}" class="img-fluid">
+                <img src="{{ asset( pokemon.photo ) }}" class="img-fluid img-poke">
                 </img>
                 </td>
             </div>
@@ -39,13 +43,13 @@
             </td>
             <td>
             <div class="col">
-                {{ pokemon.idType1.nom }}
+                <img src="{{ asset( 'images/type/'~pokemon.idType1.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
             </div>
             </td>
             <td>
             {% if pokemon.idType2 %}
                 <div class="col">
-                    {{ pokemon.idType2.nom }}
+                    <img src="{{ asset( 'images/type/'~pokemon.idType2.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
                 </div>
             {% endif %}
             </td>
