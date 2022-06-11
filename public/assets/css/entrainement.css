@@ -1,0 +1,43 @@
+.img-fluid{
+    animation: notEvolve 1s alternate;
+    animation-iteration-count: 5;
+    position: absolute;
+    z-index: 2;
+}
+
+.img-responsive{
+    position: absolute;
+    margin-left: 0%;
+    z-index: 1;
+}
+
+@keyframes notEvolve{
+    from{
+        filter: opacity(100%);
+    }
+
+   /* 50%{
+        filter: brightness(0%);
+    }*/
+
+    to{
+       /* filter: brightness(0%); */
+       filter: opacity(20%);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes Evolve{
+    from{
+        filter: brightness(100%); 
+    }
+
+    /*50%{
+        color: antiquewhite;
+    }*/
+
+    to{
+        filter: brightness(0%); 
+        transform: scale(1.2);
+    }
+}

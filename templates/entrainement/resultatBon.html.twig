@@ -1,15 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EntrainementController!{% endblock %}
+{% block title %}
+
+{% if has_evolved %}
+
+Félicitations {{ ancienNomPoke }} !
+
+{% else %}
+
+Félicitations {{ pokemonDresseur.idPokemon.nom }} !
+
+{% endif %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/entrainement.css') }}">
+{% endblock %}
+
+{% endblock %}
 
 {% block body %}
     <div class="container">
         <div class="row">
             <div class="col">
                 {% if has_evolved %}
-                Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }}. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }}.
+                Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp. 
                 {% else %}
-                Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }}. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }}
+                Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid"> 
+                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="img-responsive"> 
                 {% endif %}
             </div>
         </div>
