@@ -1,0 +1,10 @@
+.choixStarter{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    display: block;
+}
+
+.img-fluid{
+    max-width: 200%;
+}

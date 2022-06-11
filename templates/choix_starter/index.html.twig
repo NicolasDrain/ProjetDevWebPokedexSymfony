@@ -2,6 +2,10 @@
 
 {% block title %}Hello ChoixStarterController!{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/choixStarter.css') }}">
+{% endblock %}
+
 {% block body %}
 <div class="container">
     <div class="row">
@@ -12,9 +16,10 @@
         </div>
     </div>
     <table class="table">
+
         {% for pokemon in starter_pokemon %}
-        <th>
-        <a href="{{ path('app_add_starter', {id:pokemon.id}) }}">
+        <th class="table-info">
+        <a href="{{ path('app_add_starter', {id:pokemon.id}) }}" class="choixStarter">
             <div class="col-1">
                 {{ pokemon.nom }}
             </div>
@@ -25,7 +30,8 @@
         {% for pokemon in starter_pokemon %}
         <th>
             <div class="col-3">
-                <img width="50%" heigth="50%" src="{{ asset( pokemon.photo ) }}">
+                <a href="{{ path('app_add_starter', {id:pokemon.id}) }}">
+                <img class="img-fluid" src="{{ asset( pokemon.photo ) }}">
                 </img>
             </div>
         </a>
