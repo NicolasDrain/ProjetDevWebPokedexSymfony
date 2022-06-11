@@ -1,25 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Félicitations {{ pokemonDresseur.idPokemon.nom }} ! {% endblock %}
+{% block title %}Félicitations
+	{{ pokemonDresseur.idPokemon.nom }}
+	!
+{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/chasse/resultat.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/chasse/resultat.css') }}">
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-                Votre pokémon {{ pokemonDresseur.idPokemon.nom }} a chassé dans la region {{ nomRegion }} et a capturé un {{ newPokemonDresseur.idPokemon.nom }} de niveau {{ niveau }}. Félicitations ! 
-                <br><br>
-                <div class="row">
-                <div class="col-sm">
-                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid"> 
-                </div>
-                <div class="col-sm">
-                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="img-fluid img-logo img-pokeball-anim"> 
-                </div>
-                <div class="col-sm">
-                <img src="{{ asset( newPokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-poke img-poke-anim"> 
-                </div>
-            </div>
-        </div>
+	<div class="container">
+		<div class="row justify-content-center">
+			Votre pokémon
+			{{ pokemonDresseur.idPokemon.nom }}
+			a chassé dans la region
+			{{ nomRegion }}
+			et a capturé un
+			{{ newPokemonDresseur.idPokemon.nom }}
+			de niveau
+			{{ niveau }}. Félicitations !
+		</div>
+        <br>
+        <br>
+        <br>
+		<div class="row">
+			<div class="col-sm">
+				<img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-poke">
+			</div>
+			<div class="col-sm">
+				<img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="img-fluid img-logo img-pokeball-anim">
+			</div>
+			<div class="col-sm">
+				<img src="{{ asset( newPokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-poke img-poke-anim">
+			</div>
+		</div>
+	</div>
 {% endblock %}
