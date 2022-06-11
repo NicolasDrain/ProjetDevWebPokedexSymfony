@@ -12,10 +12,10 @@ Félicitations {{ pokemonDresseur.idPokemon.nom }} !
 
 {% endif %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/entrainement.css') }}">
 {% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/entrainement/resultat.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -23,11 +23,15 @@ Félicitations {{ pokemonDresseur.idPokemon.nom }} !
         <div class="row">
             <div class="col">
                 {% if has_evolved %}
-                Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp. 
+                Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp.
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid" class="img-evolue1">  
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid">  
                 {% else %}
-                Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp
+                Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp !
+                <div class="col-sm">
                 <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid"> 
-                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="img-responsive"> 
+                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" id="test"> 
+                </div>
                 {% endif %}
             </div>
         </div>
