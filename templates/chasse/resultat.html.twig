@@ -1,12 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EntrainementController!{% endblock %}
+{% block title %}Félicitations {{ pokemonDresseur.idPokemon.nom }} {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/chasse/ville.css') }}">
+{% endblock %}
 
 {% block body %}
     <div class="container">
         <div class="row">
             <div class="col">
-                Votre pokémon {{ pokemonDresseur.idPokemon.nom }} a été chassé dans la region {{ nomRegion}} et a capturé un {{ newPokemonDresseur.idPokemon.nom }} de niveau {{ niveau }}. Félicitation !
+                Votre pokémon {{ pokemonDresseur.idPokemon.nom }} a chassé dans la region {{ nomRegion }} et a capturé un {{ newPokemonDresseur.idPokemon.nom }} de niveau {{ niveau }}. Félicitations ! <br>
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="rounded float-right">
+                <img src="{{ asset('images/logo_pokeball/logo_pokeball1.png') }}" class="rounded mx-auto d-block"> 
+                <img src="{{ asset( newPokemonDresseur.idPokemon.photo ) }}" class="rounded float-left"> 
             </div>
         </div>
     </div>

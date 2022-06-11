@@ -1,0 +1,16 @@
+.rounded float-left{
+    max-width: 20%;
+    float: left;
+}
+
+.rounded mx-auto d-block{
+    max-width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rounded float-right{
+    max-width: 20%;
+    float: right;
+}
