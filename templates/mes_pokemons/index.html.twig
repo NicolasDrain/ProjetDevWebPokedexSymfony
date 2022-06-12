@@ -20,6 +20,9 @@
                 <td>
                     Niveau
                 </td>
+                <td>
+                    Actions
+                </td>
             </tr>
         {% for pokemon in pokemonDresseur %}
                 <tr>
@@ -39,7 +42,19 @@
                     <td>
                         {{ pokemon.getNiveau() }}
                     </td>
-                    
+                    <td>
+                        <a href="{{ path('app_chasse_choix_region', {id:pokemon.id}) }}">
+                        <button type="button" class="btn btn-success m-1">Chasser</button>
+                        </a>
+                        </br>
+                        <a href="{{ path('app_entrainement_pokemon', {id:pokemon.id}) }}">
+                        <button type="button" class="btn btn-info m-1">S'entraîner</button>
+                        </a>
+                        </br>
+                        <a href="{{ path('app_combat_choix', {id:pokemon.id}) }}">
+                        <button type="button" class="btn btn-danger m-1">Combattre</button>
+                        </a>
+                    </td>
                 </tr>
         {% endfor %}
         </table>
