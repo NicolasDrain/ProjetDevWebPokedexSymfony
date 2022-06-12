@@ -7,11 +7,14 @@ use App\Entity\PokemonDresseur;
 use App\Repository\PokemonRepository;
 use App\Repository\TypeRepository;
 use App\Repository\PokemonDresseurRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/peche', name: 'app_peche_')]
+#[IsGranted('ROLE_USER')]
 class PecheController extends AbstractController
 {
     #[Route('/', name: 'index')]

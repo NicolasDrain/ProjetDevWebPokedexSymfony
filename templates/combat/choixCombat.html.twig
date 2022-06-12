@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CombatController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/combat/choixCombat.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+                    {% for pokemon in listPokemonCombat %}
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                        <img class="card-img-top border-bottom" src="{{ asset( pokemon['pokemon'].photo ) }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ pokemon['pokemon'].nom }}</h5>
+                            <p>Combat : {{ pokemon['difficulte'] }}</p>
+                            <p>Niveau : {{ pokemon['niveau'] }}</p>
+                            <p>Chance de victoire : {{ pokemon['chance'] }} %</p>
+                            <p>Gain d'expérience : Entre {{ pokemon['gainExpMin'] }} exp et {{ pokemon['gainExpMax'] }} exp</p>
+                            <p>Gain d'argent : Entre {{ pokemon['gainArgentMin'] }} ₽ et {{ pokemon['gainArgentMax'] }} ₽</p>
+                            <a href="{{ path('app_combat_resultat', {id:pokemonDresseur.id, difficulte:pokemon['difficulte']}) }}" class="btn btn-success">Choisir ce combat</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+    </div>
+</div>
+{% endblock %}

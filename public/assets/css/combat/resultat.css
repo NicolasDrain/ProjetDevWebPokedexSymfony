@@ -1,0 +1,72 @@
+.img-fluid{
+}
+
+.img-pokemon{
+    max-width: 25%;
+}
+
+.img-evolue1{
+    animation: notEvolveEvolution 1.5s forwards;
+    animation-iteration-count: 2;
+}
+
+.img-evolue2{
+    animation: Evolve 1.5s forwards;
+    animation-iteration-count: 2;
+    animation-delay: 3s;
+    z-index: 1;
+    filter: opacity(0%);
+}
+
+.img-notEvolve{
+    animation: notEvolve 1.5s forwards;
+    animation-iteration-count: 4;
+}
+
+
+@keyframes notEvolve{
+    from{
+        filter: opacity(0%);
+    }
+
+   /* 50%{
+        filter: brightness(0%);
+    }*/
+
+    to{
+       /* filter: brightness(0%); */
+        filter: opacity(100%);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes notEvolveEvolution{
+    from{
+        filter: opacity(100%);
+    }
+
+   /* 50%{
+        filter: brightness(0%);
+    }*/
+
+    to{
+       /* filter: brightness(0%); */
+        filter: opacity(0%);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes Evolve{
+    from{
+        filter: opacity(0%); 
+    }
+
+    /*50%{
+        color: antiquewhite;
+    }*/
+
+    to{
+        transform: scale(1.2);
+        filter: opacity(100%); 
+    }
+}

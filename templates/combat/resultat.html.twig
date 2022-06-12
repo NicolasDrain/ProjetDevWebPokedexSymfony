@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% if msg == 'defaite' %}
+
+Défaite
+
+{% else %}
+
+Victoire !
+
+{% endif %}
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/combat/resultat.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+{% if msg == 'defaite' %}
+<div class="row justify-content-center">
+    <p>Votre {{ pokemonDresseur.idPokemon.nom}} n'a pas malheuresement pas réussi à gagner le combat. Retentez votre chance !</p>
+    <a>
+    
+    </a>
+</div>
+{% else %}
+                {% if has_evolved %}
+                <div class="row mb-5">
+                Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ gainExp }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ pokemonDresseur.getNiveau() }}. Il possède désormais {{ pokemonDresseur.exp }} exp. Vous avez également gagner {{ gainArgent }} ₽ !
+                </div>
+                <div class="row justify-content-center">
+                <img src="{{ asset( anciennePhoto ) }}" class="img-fluid img-evolue1 img-pokemon">
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-evolue2 img-pokemon">  
+                </div>
+                {% else %}
+                <div class="row mb-5">
+                Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ gainExp }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ pokemonDresseur.getNiveau() }}. Il possède désormais {{ pokemonDresseur.exp }} exp !
+                </div>
+                <br><br>
+                <div class="row justify-content-center">
+                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid img-notEvolve img-pokemon"> 
+                </div>
+                {% endif %}
+{% endif %}
+<div class="row m-5 p-5 justify-content-center">
+    <a href="{{ path('app_combat_index') }}">
+        <button type="button" class="btn btn-dark">Retournez aux combats</button>
+    </a>
+</div>
+</div>
+{% endblock %}

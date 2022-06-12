@@ -33,13 +33,13 @@ class EntrainementController extends AbstractController
         }
         $anciennePhoto = $pokemonDresseur->getIdPokemon()->getPhoto();
         $ancienNiveau = $pokemonDresseur->getNiveau();
+        $ancienNomPoke = $pokemonDresseur->getIdPokemon()->getNom();
         $p1 = ($pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()+1)-$pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()))*0.6;
         $p2 = $pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau()+2)-$pokemonDresseur->getExpByNiveau($pokemonDresseur->getNiveau());
         $exp_gagne=rand($p1,$p2);
         $pokemonDresseur->setExp($pokemonDresseur->getExp()+$exp_gagne);
         $pokemonDresseur->setDateTimeDerniereActivite(new \DateTime());
         $niveau = $pokemonDresseur->getNiveau();
-        $ancienNomPoke = $pokemonDresseur->getIdPokemon()->getNom();
         //On vérifie si le pokémon peut évoluer et si oui on le fait évoluer
         if($pokemonDresseur->canEvolve() and $niveau-$ancienNiveau>=1){
             if($pokemonDresseur->getIdPokemon()->getNom() == 'Evoli'){
