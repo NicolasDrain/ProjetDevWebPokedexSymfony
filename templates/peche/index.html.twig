@@ -1,47 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PecheController!{% endblock %}
+{% block title %}Pêche !{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/entrainement/resultat.css') }}">
+{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row">
-        <p>
-            Vous vous apprétez à partir à la pêche.
-            Veuillez choisir un appât !
-        </p>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p>
-                Appât faible - Prix 500 - Vous avez 1/10 de gagner 1500, 4/10 de gagner 500, 3/10 de gagner un pokemon eau de niveau 15 à 25, 1/10 de gagner une chaussette pourrie, et 1/10 de gagner une algue
-            </p>
-        </div>
-        <div class="col">
+    <div class="container">
+        <div class="row justify-content-center">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+    <img class="card-img-top border-bottom" src="{{ asset('images/peche/petit-appat.jpg') }}">
+    <div class="card-body">
+        <h5 class="card-title">Canne</h5>
+        <p>Prix : 500 ₽<p>
+        <p>Lots : </p>
+        <p> 1/10 de gagner 1500 ₽ !</p>
+        <p> 4/10 de gagner 500 ₽ !</p>
+        <p> 3/10 de gagner un Pokémon eau de niveau 15 à 25 !</p>
+        <p> 1/10 de gagner une chaussette pourrie !</p>
+        <p> 1/10 de gagner une algue !</p>
             <a href="{{ path('app_peche_resultat',{appat:'faible'}) }}">
-                <button type="button" class="btn btn-info">Appât faible</button>
-            </a>
+        <button type="button" class="btn btn-info">Partir à la pêche !</button>
+    </a>
     </div>
-    <div class="row">
-        <div class="col">
-            <p>
-                Appât moyen - Prix 1000 - Vous avez 2/10 de gagner 3000, 2/10 de gagner 1000, 4/10 de gagner un pokemon eau de niveau 25 à 40, 1/10 de gagner une chaussette pourrie, et 1/10 de gagner une algue
-            </p>
-        </div>
-        <div class="col">
+    </div>
+
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+    <img class="card-img-top border-bottom" src="{{ asset('images/peche/moyen-appat.png') }}">
+    <div class="card-body">
+        <h5 class="card-title">Super canne</h5>
+        <p>Prix : 1000 ₽<p>
+        <p>Lots : </p>
+        <p> 2/10 de gagner 3000 ₽ !</p>
+        <p> 2/10 de gagner 1000 ₽ !</p>
+        <p> 4/10 de gagner un Pokémon eau de niveau 25 à 40 !</p>
+        <p> 1/10 de gagner une chaussette pourrie !</p>
+        <p> 1/10 de gagner une algue !</p>
             <a href="{{ path('app_peche_resultat',{appat:'moyen'}) }}">
-                <button type="button" class="btn btn-warning">Appât moyen</button>
-            </a>
+        <button type="button" class="btn btn-info">Partir à la pêche !</button>
+    </a>
     </div>
-    <div class="row">
-        <div class="col">
-            <p>
-                Appât fort - Prix 2000 - Vous avez 3/10 de gagner 6000, 1/10 de gagner 2000, 2/10 de gagner deux pokemon eau de niveau 40 à 60, 3/10 de gagner un pokemon eau de niveau 40 à 60, 1/10 de gagner une chaussette pourrie
-            </p>
-        </div>
-        <div class="col">
+    </div>
+
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+    <img class="card-img-top border-bottom" src="{{ asset('images/peche/grand-appat.jpg') }}">
+    <div class="card-body">
+        <h5 class="card-title">Méga canne</h5>
+        <p>Prix : 2000 ₽<p>
+        <p>Lots : </p>
+        <p> 3/10 de gagner 6000 ₽ !</p>
+        <p> 1/10 de gagner 2000 ₽ !</p>
+        <p> 2/10 de gagner deux Pokémons eau de niveau 40 à 60 !</p>
+        <p> 3/10 de gagner un Pokémon eau de niveau 40 à 60 !</p>
+        <p> 1/10 de gagner une chaussette pourrie !</p>
             <a href="{{ path('app_peche_resultat',{appat:'fort'}) }}">
-                <button type="button" class="btn btn-success">Appât fort</button>
-            </a>
+        <button type="button" class="btn btn-info">Partir à la pêche !</button>
+    </a>
     </div>
+    </div>
+
+
 </div>
+</div>
+
+
 {% endblock %}
