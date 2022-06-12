@@ -63,7 +63,7 @@ class PecheController extends AbstractController
         }
         if($dresseur->getArgent()<$prix){
             $msg = 'argentManquant';
-            $info = ['Vous n\'avez pas assez d\'argent pour pêcher avec cet appât'];
+            $info = ['Vous n\'avez pas assez d\'argent pour pêcher avec cette canne à pêche'];
         }
         else{
             switch ($dropabble_peche[$nb_rand]) {
@@ -92,11 +92,11 @@ class PecheController extends AbstractController
                     break;
                 case 'chaussette':
                     $res = 'chaussette';
-                    $info = ['Tu as peché une chaussette autant te dire que tu n\'as rien gagné rentente ta chance !'];
+                    $info = ['Tu as peché une chaussette autant te dire que tu n\'as rien gagné retente ta chance !'];
                     break;
                 case 'algue':
                     $res = 'algue';
-                    $info = ['Tu as peché une algue autant te dire que tu n\'as rien gagné rentente ta chance !'];
+                    $info = ['Tu as peché une algue autant te dire que tu n\'as rien gagné retente ta chance !'];
                     break;
             }
             $dresseur->setArgent($dresseur->getArgent()+$prix);

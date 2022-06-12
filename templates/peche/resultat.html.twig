@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PecheController!{% endblock %}
+{% block title %}Resultat session de pêche{% endblock %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/css/peche/resultat.css') }}">
@@ -12,19 +12,19 @@
         <div class="col-10">
             {% if res == 'manqueArgent' %}
                 <p>
-                    {{ info[0] }}
+                    <h4>{{ info[0] }}</h4>
                 </p>
             {% elseif res =='peu' %}
                 <p>
-                    {{ info[0] }}
+                    <h4>{{ info[0] }}</h4>
                 </p>
             {% elseif res =='beaucoup' %}
                 <p>
-                    {{ info[0] }}
+                    <h4>{{ info[0] }}</h4>
                 </p>
             {% elseif res =='pokemon' %}
                 <p>
-                    Bravo tu as pêché un {{ info[0].idPokemon.nom }} de niveau {{ info[0].getNiveau() }}
+                    <h4>Bravo tu as pêché un {{ info[0].idPokemon.nom }} de niveau {{ info[0].getNiveau() }}</h4>
                     <div class="row">
                         <div class="col-sm">
                             <img src="{{ asset('images/peche/moyen-appat.png') }}" class="img-fluid img-logo img-pokeball-anim">
@@ -36,7 +36,7 @@
                 </p>
             {% elseif res =='doublePokemon' %}
                 <p>
-                    Bravo tu as pêché deux pokémons, un {{ info[0].idPokemon.nom }} de niveau {{ info[0].getNiveau() }} et un {{ info[1].idPokemon.nom }} de niveau {{ info[1].getNiveau() }}
+                    <h4>Bravo tu as pêché deux pokémons, un {{ info[0].idPokemon.nom }} de niveau {{ info[0].getNiveau() }} et un {{ info[1].idPokemon.nom }} de niveau {{ info[1].getNiveau() }}</h4>
                     <div class="row">
                         <div class="col-sm">
                             <img src="{{ asset('images/peche/moyen-appat.png') }}" class="img-fluid img-logo img-pokeball-anim">
@@ -56,17 +56,17 @@
                 </p>
             {% elseif res =='chaussette' %}
                 <p>
-                    {{ info[0] }}
+                    <h4>{{ info[0] }}</h4>
                 </p>
             {% elseif res =='algue' %}
                 <p>
-                    {{ info[0] }}
+                    <h4>{{ info[0] }}</h4>
                 </p>
             {% endif %}
         </div>
         <div class="col-2">
             <a href="{{ path('app_peche_index') }}">
-                <button type="button" class="btn btn-warning">Choix Appât</button>
+                <button type="button" class="btn btn-warning">Choix de la canne à pêche</button>
             </a>
         </div>
     </div>
