@@ -3,44 +3,35 @@
 {% block title %}Hello ChoixStarterController!{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/choixStarter.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/choixStarter/choixStarter.css') }}">
 {% endblock %}
 
 {% block body %}
 <div class="container">
     <div class="row">
-        <div class="col d-flex justify-content-center mb-5"
-            <p>
+        <div class="col d-flex justify-content-center mb-5">
+            <h2>
                 Veuillez choisir votre starter :
-            </p>
+            </h2>
         </div>
     </div>
-    <table class="table">
-
-        {% for pokemon in starter_pokemon %}
-        <th class="table-info">
-        <a href="{{ path('app_add_starter', {id:pokemon.id}) }}" class="choixStarter">
-            <div class="col-1">
-                {{ pokemon.nom }}
-            </div>
-            </th>
-             {% endfor %}
-        </tr>
-    <div class="row justify-content-md-center">
-        {% for pokemon in starter_pokemon %}
-        <th>
-            <div class="col-3">
-                <a href="{{ path('app_add_starter', {id:pokemon.id}) }}">
-                <img class="img-fluid" src="{{ asset( pokemon.photo ) }}">
-                </img>
-            </div>
-        </a>
-        </th>
-        
+    <div class="row justify-content-center">
+    {% for pokemon in starter_pokemon %}
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                        <img class="card-img-top border-bottom" src="{{ asset( pokemon.photo ) }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ pokemon.nom }}</h5>
+                            <p>
+                                <img src="{{ asset( 'images/type/'~pokemon.idType1.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
+                                {% if pokemon.idType2 %}
+                                <img src="{{ asset( 'images/type/'~pokemon.idType2.nom~'.png' ) }}" class="img-fluid img-logo-type"></img>
+                                {% endif %}
+                            </p>
+                            <a href="{{ path('app_add_starter', {id:pokemon.id}) }}" class="btn btn-success">Choisir ce starter</a>
+                        </div>
+                    </div>
         {% endfor %}
-        </tr>
+        </div>
     </div>
-    </tbody>
-    </table>
-</div>
+
 {% endblock %}
