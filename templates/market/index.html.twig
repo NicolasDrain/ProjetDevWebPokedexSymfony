@@ -9,19 +9,18 @@
                 Bienvenue sur le PokeMarket :
             </h3>
         </div>
-        <div class="row p-3">
+        <div class="row p-3 justify-content-center">
             {% for vente in list_vente %}
-                <div class="col">
-                    <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded m-3" style="width: 18rem;">
                         <img class="card-img-top border-bottom" src="{{ asset( vente.idPokemonDresseur.idPokemon.photo ) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ vente.idPokemonDresseur.idPokemon.nom }}</h5>
                             <p class="card-text">Niveau : {{ vente.idPokemonDresseur.getNiveau() }}</p>
                             <p class="card-text">Prix : {{ vente.prix }} ₽</p>
+                            <p class="card-text">Genre : {{ vente.idPokemonDresseur.genre }}</p>
                             <a href="{{ path('app_market_achat', {id:vente.id}) }}" class="btn btn-success">Acheter ce pokémon</a>
                         </div>
                     </div>
-                </div>
             {% endfor %}
         </div>
     </div>
