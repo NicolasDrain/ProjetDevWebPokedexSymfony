@@ -19,10 +19,10 @@ class PokemonDresseurType extends AbstractType
                 'class' => 'form-control',
             ]
         ])
-        ->add('create', SubmitType::class, [
+        ->add('Valider', SubmitType::class, [
             'attr' => [
-                'class' => 'form-control btn btn-primary',
-                'title' => 'Changer le surnom'
+                'class' => 'form-control btn btn-dark',
+                'title' => 'Changer le surnom',
             ]
         ])
         ;
