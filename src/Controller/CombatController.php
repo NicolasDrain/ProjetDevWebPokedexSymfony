@@ -33,7 +33,7 @@ class CombatController extends AbstractController
     {
         $list_pokemon = $pokemonRepository->findAll();
         $list_pokemon_combat = [] ;
-        $pokemon = $list_pokemon[rand(1,151)];
+        $pokemon = $list_pokemon[rand(0,150)];
         $niveau = rand($pokemonDresseur->getNiveau()-10, $pokemonDresseur->getNiveau()+2);
         if($niveau<=0){
             $niveau=1;
@@ -47,7 +47,7 @@ class CombatController extends AbstractController
         $gainArgentMax = 1000;
         $pokemon1 = ['pokemon' => $pokemon, 'niveau' => $niveau, 'difficulte' => 'Facile', 'gainExpMin' => $gainExpMin, 'gainExpMax' => $gainExpMax, 'gainArgentMin' => $gainArgentMin, 'gainArgentMax' => $gainArgentMax, 'chance' => '90'];
         array_push($list_pokemon_combat, $pokemon1);
-        $pokemon = $list_pokemon[rand(1,151)];
+        $pokemon = $list_pokemon[rand(0,150)];
         $niveau = rand($pokemonDresseur->getNiveau()+3, $pokemonDresseur->getNiveau()+15);
         if($niveau<=0){
             $niveau=1;
@@ -61,7 +61,7 @@ class CombatController extends AbstractController
         $gainArgentMax = 2500;
         $pokemon2 = ['pokemon' => $pokemon, 'niveau' => $niveau, 'difficulte' => 'Moyenne', 'gainExpMin' => $gainExpMin, 'gainExpMax' => $gainExpMax, 'gainArgentMin' => $gainArgentMin, 'gainArgentMax' => $gainArgentMax, 'chance' => '60'];
         array_push($list_pokemon_combat, $pokemon2);
-        $pokemon = $list_pokemon[rand(1,151)];
+        $pokemon = $list_pokemon[rand(0,150)];
         $niveau = rand($pokemonDresseur->getNiveau()+15, $pokemonDresseur->getNiveau()+30);
         if($niveau<=0){
             $niveau=1;
