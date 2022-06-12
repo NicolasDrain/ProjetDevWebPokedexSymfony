@@ -28,7 +28,7 @@ class VenteAndPokemonDresseurFixtures extends Fixture
                 $vente->setIdDresseur($dresseur);
                 $vente->setIdPokemonDresseur($list_pokemon_dresseur[$nb]);
                 array_splice($list_pokemon_dresseur, $nb, 1);
-                $vente->setPrix(rand(1000,20000));
+                $vente->setPrix(rand(500,2000));
                 if(rand(0,1)==1){
                     $statut = 'En cours';
                 }
