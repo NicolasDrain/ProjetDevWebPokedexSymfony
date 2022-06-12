@@ -7,11 +7,11 @@
         <div class="row">
     {% if msg == '' %}
                 <p>
-                    Féliciatation {{ dresseur.nom }} vous venez d'acheter un {{ pokemonDresseur.idPokemon.nom }} de niveau {{ niveau }} pour {{ vente.prix }} au dresseur {{ dresseurVendeur.nom }}.
+                <h4>Féliciatations {{ dresseur.nom }} vous venez d'acheter un {{ pokemonDresseur.idPokemon.nom }} de niveau {{ niveau }} pour {{ vente.prix }} au dresseur {{ dresseurVendeur.nom }} !</h4>
                 </p>
 
     {% else %}
-            <p> {{ msg }} </p>
+            <h4> {{ msg }} </h4>
     {% endif %}
     </div>
                 <div class="row">
