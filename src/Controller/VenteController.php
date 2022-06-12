@@ -56,20 +56,12 @@ class VenteController extends AbstractController
         ]);
     }
 
-    #[Route('/update/{id}', name: 'update')]
+    #[Route('/delete/{id}', name: 'delete')]
     #[Security("is_granted('ROLE_USER') and user === vente.getIdDresseur()")]
-    public function newVente(Vente $vente): Response
+    public function delete(Vente $vente, VenteRepository $venteRepository): Response
     {
-        return $this->render('vente/index.html.twig', [
-            'controller_name' => 'VenteController',
-        ]);
-    }
-
-    #[Route('/addVente', name: 'addVente')]
-    public function addVente(): Response
-    {
-        return $this->render('vente/index.html.twig', [
-            'controller_name' => 'VenteController',
-        ]);
+        $venteRepository->remove($vente, true);
+        return $this->redirectToRoute('app_vente_mesVentes');
     }
 }
+
