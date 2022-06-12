@@ -1,110 +1,120 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Détail de {{ pokemonDresseur.idPokemon.nom }} {% endblock %}
+{% block title %}
+	Détail de
+	{{ pokemonDresseur.idPokemon.nom }}
+{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/mesPokemons/detail.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/mesPokemons/detail.css') }}">
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-            <table class="table">
-                <thead class="table table-dark">
-                    <tr>
-                        <th scope="col">Photo</th>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Surnom</th>
-                        <th scope="col">Type1</th>
-                        <th scope="col">Type2</th>
-                        <th scope="col">Évolution?</th>
-                        <th scope="col">Starter?</th>
-                        <th scope="col">Courbe</th>
-                        <th scope="col">Peut évoluer?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td>
-                <img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid">
-                </img>
-                </td>
-            </div>
-                    <td>
-            <div class="col">
-                {{ pokemonDresseur.idPokemon.id }}
-            </div>
-            </td>
-            <td>
-            <div class="col">
-                {{ pokemonDresseur.idPokemon.nom }}
-            </div>
-            </td>
-             <td>
-            <div class="col">
-                {{ pokemonDresseur.surnom }}
-            </div>
-            </td>
-            <td>
-            <div class="col">
-                {{ pokemonDresseur.idPokemon.idType1.nom }}
-            </div>
-            </td>
-            <td>
-            {% if pokemonDresseur.idPokemon.idType2 %}
-                <div class="col">
-                    {{ pokemonDresseur.idPokemon.idType2.nom }}
-                </div>
-            {% endif %}
-            </td>
-            {% if pokemonDresseur.idPokemon.isEvolution == true %}
-            <td>
-                <div class="col">
-                    Ce Pokemon est une évolution
-                </div>
-            </td>
-            {% else %}
-            <td>
-                <div class="col">
-                    Ce Pokemon n'est pas une évolution
-                </div>
-                </td>
-            {% endif %}
-            {% if pokemonDresseur.idPokemon.isStarter == true %}
-            <td>
-                <div class="col">
-                    Ce Pokemon est un starter
-                </div>
-                </td>
-            {% else %}
-            <td>
-                <div class="col">
-                    Ce Pokemon n'est pas un starter
-                </div>
-                </td>
-            {% endif %}
-            <td>
-            <div class="col">
-                {{ pokemonDresseur.idPokemon.typeCourbeNiveau }}
-            </div>
-            </td>
-            {% if pokemonDresseur.idPokemon.canEvolve == true %}
-            <td>
-                <div class="col">
-                    Ce Pokemon peut évoluer
-                </div>
-            </td>
-            {% else %}
-            <td>
-                <div class="col">
-                    Ce Pokemon ne peut pas évoluer
-                </div>
-            </td>   
-            {% endif %}
-        </div>
-    </div>
-    </tbody>
-    </table>
+	<div class="container">
+		<table class="table">
+			<thead class="table table-dark">
+				<tr>
+					<th scope="col">Photo</th>
+					<th scope="col">Id</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Surnom</th>
+					<th scope="col">Type1</th>
+					<th scope="col">Type2</th>
+					<th scope="col">Évolution?</th>
+					<th scope="col">Starter?</th>
+					<th scope="col">Courbe</th>
+					<th scope="col">Peut évoluer?</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>
+					<img src="{{ asset( pokemonDresseur.idPokemon.photo ) }}" class="img-fluid">
+				</td>
+				<td>
+					<div class="col">
+						{{ pokemonDresseur.idPokemon.id }}
+					</div>
+				</td>
+				<td>
+					<div class="col">
+						{{ pokemonDresseur.idPokemon.nom }}
+					</div>
+				</td>
+				<td>
+					<div class="col">
+						{{ pokemonDresseur.surnom }}
+					</div>
+				</td>
+				<td>
+					<div class="col">
+						{{ pokemonDresseur.idPokemon.idType1.nom }}
+					</div>
+				</td>
+				<td>
+					{% if pokemonDresseur.idPokemon.idType2 %}
+						<div class="col">
+							{{ pokemonDresseur.idPokemon.idType2.nom }}
+						</div>
+					{% endif %}
+				</td>
+				{% if pokemonDresseur.idPokemon.isEvolution == true %}
+					<td>
+						<div class="col">
+							Ce Pokemon est une évolution
+						</div>
+					</td>
+				{% else %}
+					<td>
+						<div class="col">
+							Ce Pokemon n'est pas une évolution
+						</div>
+					</td>
+				{% endif %}
+				{% if pokemonDresseur.idPokemon.isStarter == true %}
+					<td>
+						<div class="col">
+							Ce Pokemon est un starter
+						</div>
+					</td>
+				{% else %}
+					<td>
+						<div class="col">
+							Ce Pokemon n'est pas un starter
+						</div>
+					</td>
+				{% endif %}
+				<td>
+					<div class="col">
+						{{ pokemonDresseur.idPokemon.typeCourbeNiveau }}
+					</div>
+				</td>
+				{% if pokemonDresseur.idPokemon.canEvolve == true %}
+					<td>
+						<div class="col">
+							Ce Pokemon peut évoluer
+						</div>
+					</td>
+				{% else %}
+					<td>
+						<div class="col">
+							Ce Pokemon ne peut pas évoluer
+						</div>
+					</td>
+				{% endif %}
+			</tr>
+		</table>
+	</div>
+<div class="container">
+	<div class="row">
+		{{ form_start(form) }}
+		<div class="form-group col-md-6">
+			{{ form_row(form.surnom) }}
+		</div>
+		<div class="btn btn-link">
+			{{ form_row(form.create) }}
+		</div>
+		{{ form_end(form) }}
+	</div>
+</div>
+
 {% endblock %}
