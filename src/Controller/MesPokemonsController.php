@@ -18,7 +18,14 @@ class MesPokemonsController extends AbstractController
     public function index(PokemonDresseurRepository $pokemonDresseurRepository): Response
     {
         $dresseur = $this->getUser();
-        $pokemonDresseur = $pokemonDresseurRepository->findBy(array('id_dresseur' => $dresseur));
+        $pokemonDresseurList = $pokemonDresseurRepository->findBy(array('id_dresseur' => $dresseur));
+        $pokemonDresseur = [];
+        foreach($pokemonDresseurList as $pokemon){
+            $info = [];
+            $isReady = $pokemon->isAvailable();
+            $info = ['pokemon' => $pokemon, 'isReady' => $isReady];
+            array_push($pokemonDresseur, $info);
+        }
         return $this->render('mes_pokemons/index.html.twig', [
             'pokemonDresseur' => $pokemonDresseur,
         ]);
