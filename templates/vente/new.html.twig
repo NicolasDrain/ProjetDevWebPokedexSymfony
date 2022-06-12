@@ -2,16 +2,25 @@
 
 {% block title %}Hello!{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/vente/new.css') }}">
+{% endblock %}
+
 {% block body %}
+<div class="container justify-content-center" >
     {{ form_start(form) }}
-        <div class="form-group">
+        <div class="form-group col-md-6">
             {{ form_row(form.prix) }}
         </div>
-        <div class="form-group">
-            {{ form_row(form.pokemonDresseur) }}
+        <br>
+        <div class="form-group col-md-4">
+        <label>Quel pokémon souhaitez-vous vendre ?</label>
+            {{ form_widget(form.pokemonDresseur) }}
         </div>
-        <div class="form-group">
+        <br>
+        <div class="btn btn-link">
             {{ form_row(form.create) }}
         </div>
     {{ form_end(form) }}
+    </div>
 {% endblock %}

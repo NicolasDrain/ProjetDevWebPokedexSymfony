@@ -20,19 +20,21 @@ class VenteType extends AbstractType
         $builder
             ->add('prix', IntegerType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+                    'placeholder' => 'À combien de Pokédollars souhaitez-vous vendre votre Pokémon ?'
                 ]
             ])
             ->add('pokemonDresseur', EntityType::class, [
                 'class' => PokemonDresseur::class,
                 'choices' => $options['data']['listPokemonDresseur'],
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control',
                 ]
             ])
             ->add('create', SubmitType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control btn btn-primary',
+                    'title' => 'Vendre'
                 ]
             ])
         ;
