@@ -12,7 +12,7 @@
     <div class="container">
                 {% if has_evolved %}
                 <div class="row mb-5">
-                Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp.
+                <h4>Félicitation votre pokemon {{ ancienNomPoke }} a évolué en {{ pokemonDresseur.idPokemon.nom }}. Il a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp.<h4>
                 </div>
                 <div class="row justify-content-center">
                 <img src="{{ asset( anciennePhoto ) }}" class="img-fluid img-evolue1 img-pokemon">
@@ -20,7 +20,7 @@
                 </div>  
                 {% else %}
                 <div class="row mb-5">
-                Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp !
+            <h4>Votre pokemon {{ pokemonDresseur.idPokemon.nom }} a gagné {{ exp_gagne }} exp. Son ancien niveau était {{ ancienNiveau }} et son niveau actuel est {{ niveau }}. Il possède désormais {{ pokemonDresseur.exp }} exp !</h4>
                 </div>
                 <br><br>
                 <div class="row justify-content-center">
