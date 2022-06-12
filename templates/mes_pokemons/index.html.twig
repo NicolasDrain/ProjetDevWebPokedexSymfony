@@ -20,26 +20,45 @@
                 <td>
                     Niveau
                 </td>
+                <td>
+                    Actions
+                </td>
             </tr>
         {% for pokemon in pokemonDresseur %}
                 <tr>
                     <td class="text-center">
-                        <a href="{{ path('app_modify_pokemon', {id:pokemon.id}) }}">
-                        <img src="{{ asset( pokemon.idPokemon.photo ) }}" class="img-fluid"></img>
+                        <a href="{{ path('app_modify_pokemon', {id:pokemon['pokemon'].id}) }}">
+                        <img src="{{ asset( pokemon['pokemon'].idPokemon.photo ) }}" class="img-fluid"></img>
                         </a>
                     </td>
                     <td>
-                        <a href="{{ path('app_modify_pokemon', {id:pokemon.id}) }}">
-                        {{ pokemon.idPokemon.nom }}
+                        <a href="{{ path('app_modify_pokemon', {id:pokemon['pokemon'].id}) }}">
+                        {{ pokemon['pokemon'].idPokemon.nom }}
                         </a>
                     </td>
                     <td>
-                        {{ pokemon.surnom }}
+                        {{ pokemon['pokemon'].surnom }}
                     </td>
                     <td>
-                        {{ pokemon.getNiveau() }}
+                        {{ pokemon['pokemon'].getNiveau() }}
                     </td>
-                    
+                    <td>
+                        {% if pokemon['isReady'] %}
+                        <a href="{{ path('app_chasse_choix_region', {id:pokemon['pokemon'].id}) }}">
+                        <button type="button" class="btn btn-success m-1">Chasser</button>
+                        </a>
+                        </br>
+                        <a href="{{ path('app_entrainement_pokemon', {id:pokemon['pokemon'].id}) }}">
+                        <button type="button" class="btn btn-info m-1">S'entraîner</button>
+                        </a>
+                        </br>
+                        <a href="{{ path('app_combat_choix', {id:pokemon['pokemon'].id}) }}">
+                        <button type="button" class="btn btn-danger m-1">Combattre</button>
+                        </a>
+                        {% else %}
+                        Le pokemon doit encore se reposer !
+                        {% endif %}
+                    </td>
                 </tr>
         {% endfor %}
         </table>
