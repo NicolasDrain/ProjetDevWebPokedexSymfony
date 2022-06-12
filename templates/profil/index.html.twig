@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            Vos informations personnelles :
+        </div>
+        <div class="col-6">
+            Votre avancée dans le jeu :
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            Email : {{ dresseur.email }}.
+            </br>
+            Nom : {{ dresseur.nom }}.
+        </div>
+        <div class="col-6">
+            Vous avez réussi à obtenir {{ nbPokemon }} pokémons.
+            </br>
+            Vous avez accumulés {{ dresseur.argent }} ₽.
+        </div>
+    </div>
+</div>
+{% endblock %}
