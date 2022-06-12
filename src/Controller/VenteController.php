@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Dresseur;
+use App\Entity\PokemonDresseur;
+use App\Entity\Pokemon;
 use App\Entity\Vente;
 use App\Form\VenteType;
 use App\Repository\VenteRepository;
