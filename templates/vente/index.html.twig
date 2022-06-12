@@ -1,41 +1,71 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello VenteController!{% endblock %}
-
-{% block body %}
-Bienvenue dans votre gestionnaire de vente pokemon
-<div class="container">
-{% for venteEnCours in ventesEnCours %}
-        <div class="col">
-            Vente n°{{ venteEnCours.id }} en cours            
-            <div class="col">
-                    <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                        <img class="card-img-top border-bottom" src="{{ asset( venteEnCours.idPokemonDresseur.idPokemon.photo ) }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ venteEnCours.idPokemonDresseur.idPokemon.nom }}</h5>
-                            <p class="card-text">Niveau : {{ venteEnCours.idPokemonDresseur.getNiveau() }}</p>
-                            <p class="card-text">Prix : {{ venteEnCours.prix }} ₽</p>
-                            <a href="{{ path('app_market_achat', {id:venteEnCours.id}) }}" class="btn btn-success">Acheter ce pokémon</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        {% endfor %}
-{% for venteTerminee in ventesTerminee %}
-        <div class="col">
-            Vente n°{{ venteTerminee.id }} terminée     
-             <div class="col">
-                    <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                        <img class="card-img-top border-bottom" src="{{ asset( venteTerminee.idPokemonDresseur.idPokemon.photo ) }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ venteTerminee.idPokemonDresseur.idPokemon.nom }}</h5>
-                            <p class="card-text">Niveau : {{ venteTerminee.idPokemonDresseur.getNiveau() }}</p>
-                            <p class="card-text">Prix : {{ venteTerminee.prix }} ₽</p>
-                            <a href="{{ path('app_market_achat', {id:venteTerminee.id}) }}" class="btn btn-success">Acheter ce pokémon</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        {% endfor %}
-</div>
+{% block title %}
+    Hello VenteController!
 {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center mb-5">
+            <h2> Bienvenue dans votre gestionnaire de vente pokemon</h2>
+            </div>
+    
+            <div class="row justify-content-center">
+                <h3> Ventes en cours</h3>
+            
+        {% for venteEnCours in ventesEnCours %}         
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 18rem;">
+                        <img class="card-img-top border-bottom" src="{{ asset( venteEnCours.idPokemonDresseur.idPokemon.photo ) }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{ venteEnCours.idPokemonDresseur.idPokemon.nom }}
+                                </h5>
+                                <p class="card-text">
+                                    Niveau : 
+                                    {{ venteEnCours.idPokemonDresseur.getNiveau() }}
+                                </p>
+                                <p class="card-text">
+                                    Prix : 
+                                    {{ venteEnCours.prix }}
+                                    ₽
+                                </p>
+                                <p>
+                                    Vente n° {{ venteEnCours.id }}
+                                </p>
+                                <a href="{{ path('app_market_achat', {id:venteEnCours.id}) }}" class="btn btn-success">
+                                    Acheter ce pokémon
+                                </a>
+                            </div>
+                        </div>
+                {% endfor %}
+        </div>
+            <h3> Ventes terminée</h3>
+            {% for venteTerminee in ventesTerminee %}
+                <div class="col">     
+                                 
+                    <div class="col">
+                        <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                            <img class="card-img-top border-bottom" src="{{ asset( venteTerminee.idPokemonDresseur.idPokemon.photo ) }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{ venteTerminee.idPokemonDresseur.idPokemon.nom }}
+                                    </h5>
+                                    <p class="card-text">
+                                        Niveau : 
+                                        {{ venteTerminee.idPokemonDresseur.getNiveau() }}
+                                    </p>
+                                    <p class="card-text">
+                                        Prix : 
+                                        {{ venteTerminee.prix }}
+                                        ₽
+                                    </p>
+                                    <p>
+                                        Vente n° {{ venteTerminee.id }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endblock %}
+        
