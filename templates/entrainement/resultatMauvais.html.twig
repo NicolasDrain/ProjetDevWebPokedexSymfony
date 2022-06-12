@@ -1,14 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EntrainementController!{% endblock %}
+{% block title %}Reposez-vous !{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/entrainement/indisponible.css') }}">
+{% endblock %}
 
 {% block body %}
     <div class="container">
-        <div class="row">
-            <div class="col">
-                Votre pokémon est trop fatigué pour s'entrainer maintenant veuillez revenir un peu plus tard.
-
-            </div>
+        <div class="row justify-content-center m-5">
+                <h4>Votre pokémon est trop fatigué pour s'entrainer maintenant veuillez revenir un peu plus tard. </h4>
+        </div>
+        <div class="row justify-content-center m-5">
+            <img src="{{ asset('assets/css/entrainement/Ronflex.gif') }}" class="img-fluid justify-content-center">
         </div>
     </div>
 {% endblock %}
