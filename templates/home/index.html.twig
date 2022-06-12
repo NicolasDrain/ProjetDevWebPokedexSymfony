@@ -1,7 +1,185 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+            <h1 class="fw-light"><b>Bienvenue dans un monde peuplé de créatures étranges nommées Pokemons !</b></h1>
+    </div>
+    <div class="row py-lg-5" >
+    <img class="img-fluid" src="{{ asset('images/home/home2.png') }}">
+    <div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/mes-pokemons.png') }}">
+            <div class="card-body h-75 d-inline-block" >
+              <p class="card-text">Ici, vous pouvez admirer la liste des pokemons que vous avez attrapé mais également d'effectuer diverses activités avec eux.  </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/pokedex.png') }}">
+            <div class="card-body">
+              <p class="card-text">Sur cette interface, vous pourrez contempler l'ensemble des pokemons disponibles ainsi que leurs informations générales.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/pokedex-grise.gif') }}">
+            <div class="card-body">
+              <p class="card-text">Cet outil permet de suivre l'avancement de votre aventure Pokemon en visualisant les pokemons qu'il vous reste à attraper.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/entrainement.png') }}">
+            <div class="card-body">
+              <p class="card-text">Vous pouvez entrainer votre pokemon à condition qu'il ne soit pas fatigué, résultant en gain d'expérience qui peut aboutir à un gain de niveau voire même à une évolution</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/chasse.png') }}">
+            <div class="card-body">
+              <p class="card-text">Vous pouvez sélectionner un pokemon, à condition qu'il ne soit pas fatigué, afin d'aller chasser dans une région spécifique et d'y capturer un pokemon dont le niveau dépend de celui de notre pokemon choisi</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/peche.png') }}">
+            <div class="card-body">
+              <p class="card-text">Vous pouvez choisir la canne à pêche à utiliser ce qui influe la prix à payer, mais également les récompenses possibles comme l'argent à gagner et le niveau des pokemons eau à pêcher</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/combat.png') }}">
+            <div class="card-body">
+              <p class="card-text">Vous pouvez sélectionner un pokemon qui n'est pas fatigué afin de combattre, un choix entre trois pokemons de niveau différent, dont la probabilité de victoire ainsi que les gains d'expérience et d'argent dépenderont.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/achat.png') }}">
+            <div class="card-body">
+              <p class="card-text">Un marché qui permet de voir les pokemons vendus par les autres dresseurs avec les informations concernant ce pokemon ainsi que son prix.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/vente.png') }}">
+            <div class="card-body">
+              <p class="card-text">Une interface de vente qui permet de vendre ses pokémmons éligi à la vente mais égalemetn d'accéder à l'historique des ventes terminées et de celles en cours.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/starter.png') }}">
+            <div class="card-body">
+              <p class="card-text">Le choix du starter est proposé au dresseur dès que son compte est crée, s'il ne choisit pas directement et préfère se déconnecter, à sa reconnection il sera à nouveau redirigé vers la page de choix du starter.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/admin.png') }}">
+            <div class="card-body">
+              <p class="card-text">partie admin</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col">
+          <div class="card shadow-sm">
+            <img height="250" src="{{ asset('images/home/evolution.png') }}">
+            <div class="card-body">
+              <p class="card-text">Le système d'évolution est implémenté au niveau des combats et de l'entrainement qui sont les deux moyens de gagner de l'expérience et de gagner un niveau, dès que le niveau requis est atteint le pokemon évolue, dans le cas d'évoli il a une chance sur 3 d'évoluer en aquali, pyroli ou voltali. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
 
 {% endblock %}
