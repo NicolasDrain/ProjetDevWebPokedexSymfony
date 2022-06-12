@@ -1,6 +1,6 @@
 Bonjour, et bienvenue dans le readme du projet Symfony 'pokemon_X_hunter' de la matière Dev Web L3 MIAGE apprentissage Paris 1 Panthéon Sorbonne de Mr Vincent Poupet.
 Ce projet a été réalisé par Ishac HADJ AHMED, Adrien MONTEIL et Nicolas DRAIN.
-Vous retrouvez ici toutes les inscrutction pour lancer le projet le plus facilement et rapidement possible.
+Vous retrouverez ici toutes les instructions pour lancer le projet le plus facilement et rapidement possible.
 
 Étape 1 : Veuillez vous assurez que dans le fichier .php-version du projet la bonne version du php que vous utilisez soit indiquée. Il faut au minimum une version 8.0. Vous           pouvez vérifier la version de php que symfony utilise à l'aide de cette commande 'symfony local:php:list'.
 
@@ -15,7 +15,7 @@ Vous retrouvez ici toutes les inscrutction pour lancer le projet le plus facilem
 
 Étape 6 : Vous pouvez désormais exécuter cette commande 'php bin/console doctrine:migrations:migrate' et valider. Cela permet de créer toute les tables de la base de données.
 
-Étape 7 : Vous pouvez désormais exécuter cette commande 'php bin/console doctrine:fixtures:load' et entrer la commande 'yes'. Cela permet d'insérer dans la base de données un jeu de données et ainsi permettre de tester au mieux l'application.
+Étape 7 : Vous pouvez désormais exécuter cette commande 'php bin/console doctrine:fixtures:load' et entrer la commande 'yes'. Cela permet d'insérer dans la base de données un jeu de données et ainsi permettre de tester au mieux l'application. Cela a été réalisé avec des datafixtures et fakerphp.
 
 Étape 8 : Vous pouvez désormais exécuter la commande 'symfony server:start' pour démarrer le serveur.
 
