@@ -9,10 +9,18 @@
     <div class="row py-lg-5">
             <h1 class="fw-light"><b>Bienvenue dans un monde peuplé de créatures étranges nommées Pokémons !</b></h1>
     </div>
-    <div class="row" >
     <img class="img-fluid" src="{{ asset('images/home/home2.png') }}">
     <div>
   </section>
+  <div class="container m-5">
+    <div class="row text-center">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <h4>Listing des fonctionnalités du site :</h4>
+      </div>
+    </div>
+  </div>
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -64,7 +72,7 @@
             <img class="img-fluid rounded-top" src="{{ asset('images/home/entrainement.png') }}">
             <div class="card-body">
               <h4>Entraînement</h4>
-              <p class="card-text">Vous pouvez entrainer votre pokemon à condition qu'il ne soit pas fatigué, résultant en gain d'expérience qui peut aboutir à un gain de niveau voire même à une évolution</p>
+              <p class="card-text">Vous pouvez entrainer votre pokemon à condition qu'il ne soit pas fatigué, résultant en gain d'expérience dépendant du niveau du pokémon qui part s'entraîner. Cela peut aboutir à un gain de niveau voire même à une évolution du pokémon. Il n'est évidemment pas possible d'entraîner des pokémons qui n'appartiennent pas à l'utilisateur courant.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button class="btn btn-success"><a href="{{ path('app_entrainement') }}" class="nav-link px-2 text-white">Entraînement</a></button>
@@ -78,7 +86,7 @@
             <img class="img-fluid rounded-top" src="{{ asset('images/home/chasse.png') }}">
             <div class="card-body">
               <h4>Chasse</h4>
-              <p class="card-text">Vous pouvez sélectionner un pokemon, à condition qu'il ne soit pas fatigué, afin d'aller chasser dans une région spécifique et d'y capturer un pokemon dont le niveau dépend de celui de notre pokemon choisi</p>
+              <p class="card-text">Vous pouvez sélectionner un pokemon, à condition qu'il ne soit pas fatigué, afin d'aller chasser dans une région spécifique et d'y capturer un pokemon dont le niveau dépend de celui de notre pokemon choisi. Il n'est évidemment pas possible d'entraîner des pokémons qui n'appartiennent pas à l'utilisateur courant. Si vous capturez un NidoranF ou un NidoranM ou une de leurs évolutions, il seront nécessairement respectivement Mâle et Femelle.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button class="btn btn-success"><a href="{{ path('app_chasse_index') }}" class="nav-link px-2 text-white">Chasse</a></button>
@@ -92,7 +100,7 @@
             <img class="img-fluid rounded-top" src="{{ asset('images/home/peche.png') }}">
             <div class="card-body">
               <h4>Pêche</h4>
-              <p class="card-text">Vous pouvez choisir la canne à pêche à utiliser ce qui influe la prix à payer, mais également les récompenses possibles comme l'argent à gagner et le niveau des pokemons eau à pêcher</p>
+              <p class="card-text">Trois choix de canne à pêche s'offrent à vous. Ces cannes à pêche de rareté différente ont toutes un prix différent et permettent de gagner différentes récompenses. Comme de l'argent, ou un ou plusieurs pokémons eau, ou bien encore une chaussette pourrie. Il n'est évidemment pas possible de pêcher si l'argent n'est pas suffisant.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button class="btn btn-success"><a href="{{ path('app_peche_index') }}" class="nav-link px-2 text-white">Pêche</a></button>
@@ -107,7 +115,7 @@
             <img class="img-fluid rounded-top" src="{{ asset('images/home/combat.png') }}">
             <div class="card-body">
               <h4>Combat</h4>
-              <p class="card-text">Vous pouvez sélectionner un pokemon qui n'est pas fatigué afin de combattre, un choix entre trois pokemons de niveau différent, dont la probabilité de victoire ainsi que les gains d'expérience et d'argent dépenderont.</p>
+              <p class="card-text">Vous pouvez sélectionner un pokémon qui n'est pas fatigué afin de combattre, un choix entre trois pokémons de niveau différent et dépendant du pokémon combattant, dont la probabilité de victoire ainsi que les gains d'expérience et d'argent dépenderont. Le pokémon pourra alors en cas de victoire gagner un niveau ou même évoluer. Il n'est évidemment pas possible d'aller combattre avec un pokémon qui ne nous appartient pas.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button class="btn btn-success"><a href="{{ path('app_combat_index') }}" class="nav-link px-2 text-white">Combat</a></button>
@@ -122,7 +130,7 @@
             <img class="img-fluid rounded-top" src="{{ asset('images/home/achat.png') }}">
             <div class="card-body">
               <h4>Market</h4>
-              <p class="card-text">Vous pouvez accéder à un marché Pokémon qui permet de voir tous les pokemons vendus par les autres dresseurs avec les informations concernant celui-ci ainsi que son prix.</p>
+              <p class="card-text">Vous pouvez accéder à un marché Pokémon qui permet de voir tous les pokemons vendus par les autres dresseurs avec les informations concernant celui-ci ainsi que son prix. Om vous est également possible d'acheter ces pokémons si vous possédez assez d'argent. Une fois le pokémon acheté le pokémon vous appartiendra et ne sera plus en vente. Il n'est évidemment pas possible d'acheter un de nos propres pokémons.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button class="btn btn-success"><a href="{{ path('app_market_list') }}" class="nav-link px-2 text-white">Achat</a></button>
@@ -136,7 +144,7 @@
             <img class="img-fluid rounded-top" src="{{ asset('images/home/vente.png') }}">
             <div class="card-body">
               <h4>Vente</h4>
-              <p class="card-text">Une interface de vente qui permet de vendre ses pokémmons éligi à la vente mais égalemetn d'accéder à l'historique des ventes terminées et de celles en cours.</p>
+              <p class="card-text">Une interface de vente qui permet de vendre ses pokémons à la vente mais également d'accéder à l'historique des ventes terminées et de celles en cours. Il est également possible d'annuler une vente en cours. Il n'est évidemment pas possible de vendre un pokémon qui ne nous appartient pas.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button class="btn btn-success"><a href="{{ path('app_vente_new') }}" class="nav-link px-2 text-white">Vente</a></button>
@@ -150,7 +158,7 @@
             <img class="img-fluid rounded-top" src="{{ asset('images/home/starter.png') }}">
             <div class="card-body">
             <h4>Choix Starter</h4>
-              <p class="card-text">Le choix du starter est proposé au dresseur dès que son compte est crée, s'il ne choisit pas directement et préfère se déconnecter, à sa reconnection il sera à nouveau redirigé vers la page de choix du starter.</p>
+              <p class="card-text">Le choix du starter est proposé au dresseur dès que son compte est crée, s'il ne choisit pas directement et préfère se déconnecter, à sa reconnection il sera à nouveau redirigé vers la page de choix du starter. Cette page n'est disponible uniquement une seule et unique fois, une fois récupéré il ne sera plus jamais possible de retourner sur la page choixStarter.</p>
               <div class="d-flex justify-content-between align-items-center">
               </div>
             </div>
